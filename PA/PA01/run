@@ -1,0 +1,19 @@
+#!/bin/bash
+gcc -std=c99 -Wall -Wshadow -Wvla -pedantic -o3 *.c -o pa1
+./pa1 original/binary1 t1 t2 t3 t4
+diff t4 compressed/binary1.hbt
+diff t3 code/binary1.code
+diff t2 tree/binary1.tree
+diff t1 count/binary1.count
+./pa1 original/gophers  t1 t2 t3 t4
+diff t4 compressed/gophers.hbt
+
+./pa1 original/lorum t1 t2 t3 t4
+diff t4 compressed/lorum.hbt
+
+./pa1 original/stone t1 t2 t3 t4
+diff t4 compressed/stone.hbt
+
+./pa1 original/woods t1 t2 t3 t4
+diff t4 compressed/woods.hbt
+

@@ -1,0 +1,2 @@
+#!/bin/bash
+vim -p  huffman.c huffman_main.c huffman.h

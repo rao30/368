@@ -1,0 +1,1 @@
+/usr/bin/cc -g  -Wl,--enable-auto-import CMakeFiles/PA1.dir/huffman.c.o CMakeFiles/PA1.dir/huffman_main.c.o  -o PA1.exe -Wl,--out-implib,libPA1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

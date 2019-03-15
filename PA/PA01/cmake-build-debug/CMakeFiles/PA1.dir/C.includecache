@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/d/Purdue/ECE368/PA/PA01/huffman.c
+stdio.h
+-
+stdlib.h
+-
+huffman.h
+/cygdrive/d/Purdue/ECE368/PA/PA01/huffman.h
+string.h
+-
+
+/cygdrive/d/Purdue/ECE368/PA/PA01/huffman.h
+
