@@ -1,8 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/PA1.dir/huffman.c.o"
-  "CMakeFiles/PA1.dir/huffman_main.c.o"
+  "CMakeFiles/PA1.dir/huffman.c.obj"
+  "CMakeFiles/PA1.dir/huffman_main.c.obj"
   "PA1.pdb"
   "PA1.exe"
+  "PA1.exe.manifest"
   "libPA1.dll.a"
 )
 

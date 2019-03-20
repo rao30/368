@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BuildServerSettings">
+    <option name="LOGIN" value="" />
+    <option name="SERVER_URL" value="http://buildserver" />
+    <option name="REMEMBER_ME" value="true" />
+    <option name="USE_IDEA_PROXY_SETTINGS" value="true" />
+    <option name="INSPECTIONS_BUILD_TYPE_IDS" />
+    <option name="DUPLICATES_BUILD_TYPE_IDS" />
+    <option name="COVERAGE_SETTINGS" />
+    <option name="TEST_STATUS_ENABLED" value="true" />
+    <option name="TEST_STATUS_SHOW_SUCCESSFUL" value="false" />
+    <option name="POSTPONE_SUITABLE_CONFIGURATIONS_SEARCH" value="false" />
+    <option name="ARTIFACTS_BUILD_TYPE_IDS" />
+    <option name="PERFORM_COMMIT_IF_SUCCESSFUL" value="true" />
+    <option name="PERFORM_COMMIT_IF_NO_NEW_FAILED_TESTS" value="false" />
+    <option name="REQUEST_CONFIRMATON" value="false" />
+    <option name="PRE_TESTED_COMMIT" value="true" />
+    <option name="FILTER_BY_STATUS" value="false" />
+    <option name="FILTER_MARKED_AS_FIXED" value="false" />
+    <option name="SHOW_CLOSE_PROMPT" value="true" />
+    <option name="TOOL_WINDOW_SELECTED_CONTENT_INDEX" value="0" />
+    <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="untitled" targetName="PA1" />
@@ -12,14 +34,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48c1a79d-0748-4f0d-899c-975fd6576bd6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/PA/PA03/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PA/PA03/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PA/PA03/PA03.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PA/PA03/banana" beforeDir="false" afterPath="$PROJECT_DIR$/PA/PA03/banana" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PA/PA03/cmake-build-debug/CMakeFiles/PA3.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/PA/PA03/cmake-build-debug/CMakeFiles/PA3.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PA/PA03/cmake-build-debug/CMakeFiles/PA3.dir/pa3.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/PA/PA03/cmake-build-debug/CMakeFiles/PA3.dir/pa3.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PA/PA03/cmake-build-debug/CMakeFiles/PA3.dir/tree.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/PA/PA03/cmake-build-debug/CMakeFiles/PA3.dir/tree.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PA/PA03/cmake-build-debug/PA3.exe" beforeDir="false" afterPath="$PROJECT_DIR$/PA/PA03/cmake-build-debug/PA3.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PA/PA03/mango" beforeDir="false" afterPath="$PROJECT_DIR$/PA/PA03/mango" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PA2/.vs/PA2/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/PA2/.vs/PA2/v15/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PA2/.vs/PA2/v15/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/PA2/.vs/PA2/v15/Browse.VC.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PA2/.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/PA2/.vs/slnx.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PA2/pa2.c" beforeDir="false" afterPath="$PROJECT_DIR$/PA2/pa2.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/3.13.2/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/3.13.2/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/3.13.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/3.13.2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/3.13.2/CMakeRCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/3.13.2/CMakeRCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/3.13.2/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/3.13.2/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/PA1.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/PA1.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/PA1.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/PA1.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/PA1.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/PA1.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/PA1.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/PA1.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/PA1.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/PA1.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/PA1.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/PA1.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/PA1.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/PA1.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/PA1.dir/huffman.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/PA1.dir/huffman_main.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/PA1.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/PA1.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/PA1.exe" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/PA1.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw14/cmake-build-debug/untitled.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/hw14/cmake-build-debug/untitled.cbp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/hw14/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,14 +78,26 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/PA/PA03/pa3.c">
+        <entry file="file://$PROJECT_DIR$/PA2/pa2.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="34" lean-forward="true" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+            <state relative-caret-position="338">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
               <folding>
-                <element signature="e#42#59#0" expanded="true" />
+                <element signature="e#1#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PA2/sequence.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-204">
+              <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -53,12 +113,13 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/PA/PA03" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/hw14/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/PA2/pa2.c" />
       </list>
     </option>
   </component>
@@ -74,6 +135,22 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="untitled" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="untitled" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="PA2" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -101,7 +178,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -109,6 +185,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/hw14" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -122,8 +199,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Unnamed">
-    <configuration name="PA1" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="PA1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="PA1">
+  <component name="RunManager" selected="Application.PA1">
+    <configuration name="PA1" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="file://$PROJECT_DIR$/PA2" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="PA1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="PA1">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -149,11 +226,12 @@
       <option name="presentableId" value="Default" />
       <updated>1552091965751</updated>
       <workItem from="1552091967332" duration="900000" />
+      <workItem from="1552691682378" duration="2469000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="900000" />
+    <option name="totallyTimeSpent" value="3369000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -165,44 +243,56 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2521322" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="CMake" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" weight="0.3286119" />
-      <window_info anchor="bottom" id="Messages" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" weight="0.3286119" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="TeamCity" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32827735" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32827735" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.3286119" />
+      <window_info anchor="bottom" id="CMake" order="12" />
+      <window_info anchor="right" id="LuaJ" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/PA2/pa2.c</url>
+          <line>7</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/PA2/pa2.c</url>
+          <line>31</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/hw14/huffman.c">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/PA/PA03/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/PA/PA03/CMakeLists.txt" />
     <entry file="file://$PROJECT_DIR$/hw14/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -217,12 +307,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PA/PA03/pa3.c">
+    <entry file="file://$PROJECT_DIR$/PA/PA03/pa3.c" />
+    <entry file="file://$PROJECT_DIR$/PA2/sequence.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="34" lean-forward="true" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+        <state relative-caret-position="-204">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
           <folding>
-            <element signature="e#42#59#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PA2/pa2.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#1#25#0" expanded="true" />
           </folding>
         </state>
       </provider>

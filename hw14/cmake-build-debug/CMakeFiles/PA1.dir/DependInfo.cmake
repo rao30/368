@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/cygdrive/d/Purdue/ECE368/hw14/huffman.c" "/cygdrive/d/Purdue/ECE368/hw14/cmake-build-debug/CMakeFiles/PA1.dir/huffman.c.o"
-  "/cygdrive/d/Purdue/ECE368/hw14/huffman_main.c" "/cygdrive/d/Purdue/ECE368/hw14/cmake-build-debug/CMakeFiles/PA1.dir/huffman_main.c.o"
+  "E:/Purdue/368/hw14/huffman.c" "E:/Purdue/368/hw14/cmake-build-debug/CMakeFiles/PA1.dir/huffman.c.obj"
+  "E:/Purdue/368/hw14/huffman_main.c" "E:/Purdue/368/hw14/cmake-build-debug/CMakeFiles/PA1.dir/huffman_main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
