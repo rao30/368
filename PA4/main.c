@@ -69,10 +69,11 @@ int main(int argc, char *argv[]) {
 			fclose(fp);
 			return EXIT_FAILURE;
 		}
-		fclose(fp);
-		fclose(writeFile);
+
 		preOrder(root, writeFile);
 		free_Tree(root);
+		fclose(fp);
+		fclose(writeFile);
 	}
 
 	//binarytoText(argv[1]);
