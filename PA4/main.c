@@ -31,6 +31,8 @@ int main(int argc, char *argv[]) {
 	insert(root, 120);
 	insert(root, 15);
 	insert(root, 10);
+	insert(root, 130);
+	insert(root, 140);
 //	//insert(root, 30);
 //	insert(root, 5);
 //	insert(root, 500);
@@ -46,13 +48,12 @@ int main(int argc, char *argv[]) {
   //  update_balance(root);
 
 
-	insert(root, 130);
+
 	inOrder(root);
 	printf("\n\n");
-	insert(root, 140);
+
 	update_balance(root);
-	delete(&root, 140);
-	delete(&root, 120);
+	delete(&root, 130);
 	balance(&root);
     inOrder(root);
     printf("\n\n");

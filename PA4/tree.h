@@ -42,6 +42,8 @@ void right_rotate(Node **root);
 
 void free_Tree(Node *root);
 
+Node *maxNode(Node* node);
+
 #endif
 
 

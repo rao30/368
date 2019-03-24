@@ -49,6 +49,7 @@ Node* insert(Node* node, int k)
 
 void delete(Node** node, int k)
 {
+    Node *root = *node;
     /* If the tree is empty, return a new node */
     if ((*node) == NULL) return;
 
@@ -57,15 +58,30 @@ void delete(Node** node, int k)
         delete(&((*node)->left), k);
     else if (k > (*node)->key)
         delete(&((*node)->right), k);
-    else {
+    else if (k == (*node)->key){
         if((*node)->left == NULL && (*node)->right == NULL) {
             free(*node);
             *node = NULL;
+            return;
         }
         else if((*node)->left == NULL) {
             Node *temp = *node;
             *node = ((*node)->right);
             free(temp);
+            return;
+        }
+        else if((*node)->right == NULL) {
+            Node *temp = *node;
+            *node = ((*node)->left);
+            free(temp);
+            return;
+        }
+        else {
+            Node *max = maxNode((*node)->left);
+            int tempK = max->key;
+            delete(&root, max->key);
+            (*node)->key = tempK;
+            return;
         }
     }
 
@@ -219,14 +235,14 @@ void right_rotate(Node **root) {
      int a = 1;
 }
 
-Node * maxNode(Node* node)
+Node *maxNode(Node* node)
 {
     Node *current = node;
 
     /* loop down to find the leftmost leaf */
-    while (current->right != NULL)
+    while (current->right != NULL) {
         current = current->right;
-
+    }
     return current;
 }
 
