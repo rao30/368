@@ -22,31 +22,33 @@ void inOrder(Node *root)
 }
 
 int preOrder(Node *root, FILE *fp) {
-    int status;
+    int status = EXIT_SUCCESS;
     int k;
     char ch;
     if (root != NULL) {
+        k = root->key;
+        int len = fwrite(&k, sizeof(int), 1, fp);
+        if (len != 1) {
+            printf("%d\n", 0);
+            return EXIT_FAILURE;
+        }
+        ch = binaryPattern(root);
+        len = fwrite(&ch, sizeof(char), 1, fp);
+        if (len != 1) {
+            printf("%d\n", 0);
+            return EXIT_FAILURE;
+        }
+
+        printf("%d %c\n",k, ch);
+
         status = preOrder(root->left, fp);
         if (status == EXIT_FAILURE) {
             return EXIT_FAILURE;
         }
-        else {
-            k = root->key;
-            int len = fwrite(&k, sizeof(int), 1, fp);
-            if (len != 1) {
-                printf("%d\n", 0);
-                return EXIT_FAILURE;
-            }
-            ch = binaryPattern(root);
-            len = fwrite(&ch, sizeof(char), 1, fp);
-            if (len != 1) {
-                printf("%d\n", 0);
-                return EXIT_FAILURE;
-            }
-            status = preOrder(root->right, fp);
-            if (status == EXIT_FAILURE) {
-                return EXIT_FAILURE;
-            }
+
+        status = preOrder(root->right, fp);
+        if (status == EXIT_FAILURE) {
+            return EXIT_FAILURE;
         }
     }
     return EXIT_SUCCESS;
@@ -98,7 +100,7 @@ void delete(Node** node, int k)
     /* If the tree is empty, return a new node */
     if ((*node) == NULL) return;
 
-    /* Otherwise, recur down the tree */
+        /* Otherwise, recur down the tree */
     else if (k < (*node)->key)
         delete(&((*node)->left), k);
     else if (k > (*node)->key)
@@ -217,7 +219,7 @@ int height(Node *root) {
 //    return node;
 //}
 void balance(Node **node) {
- //   Node **ptr = node;
+    //   Node **ptr = node;
     if((*node) == NULL) {
         return;
     }
@@ -277,7 +279,7 @@ void right_rotate(Node **root) {
     newroot->right = (*root);
     (*root)->left = temp;
     (*root) = newroot;
-     int a = 1;
+    int a = 1;
 }
 
 Node *maxNode(Node* node)

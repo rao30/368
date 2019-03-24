@@ -6,15 +6,9 @@
 
 #IncludeRegexTransform: 
 
-E:/Purdue/368/PA4/main.c
-stdlib.h
--
+E:/Purdue/368/PA4/tree.c
 tree.h
 E:/Purdue/368/PA4/tree.h
-stdio.h
--
-string.h
--
 
 E:/Purdue/368/PA4/tree.h
 stdio.h
