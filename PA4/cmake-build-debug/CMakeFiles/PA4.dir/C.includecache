@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/Purdue/368/PA4/tree.c
+stdio.h
+-
+stdlib.h
+-
+tree.h
+E:/Purdue/368/PA4/tree.h
+
+E:/Purdue/368/PA4/tree.h
+
