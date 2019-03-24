@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+
 #include "tree.h"
 
 
@@ -19,6 +18,52 @@ void inOrder(Node *root)
         inOrder(root->left);
         printf("%d \n", root->key);
         inOrder(root->right);
+    }
+}
+
+int preOrder(Node *root, FILE *fp) {
+    int status;
+    int k;
+    char ch;
+    if (root != NULL) {
+        status = preOrder(root->left, fp);
+        if (status == EXIT_FAILURE) {
+            return EXIT_FAILURE;
+        }
+        else {
+            k = root->key;
+            int len = fwrite(&k, sizeof(int), 1, fp);
+            if (len != 1) {
+                printf("%d\n", 0);
+                return EXIT_FAILURE;
+            }
+            ch = binaryPattern(root);
+            len = fwrite(&ch, sizeof(char), 1, fp);
+            if (len != 1) {
+                printf("%d\n", 0);
+                return EXIT_FAILURE;
+            }
+            status = preOrder(root->right, fp);
+            if (status == EXIT_FAILURE) {
+                return EXIT_FAILURE;
+            }
+        }
+    }
+    return EXIT_SUCCESS;
+}
+
+char binaryPattern(Node *node) {
+    if((node->left) == NULL && (node->right) == NULL) {
+        return 0x00;
+    }
+    else if((node->left) == NULL){
+        return 0x01;
+    }
+    else if((node->right) == NULL){
+        return 0x02;
+    }
+    else {
+        return 0x03;
     }
 }
 
@@ -183,7 +228,7 @@ void balance(Node **node) {
     update_balance((*node));
     if (requires_Bal(*node)) {
         if (getBalance(*node) == 2) {
-            if (getBalance((*node)->left) == 1) {
+            if (getBalance((*node)->left) == 1 || getBalance((*node)->left) == 0) {
                 right_rotate(node);
             } else if (getBalance((*node)->left) == -1) {
                 left_rotate(&((*node)->left));
@@ -191,7 +236,7 @@ void balance(Node **node) {
             }
         }
         else if (getBalance(*node) == -2) {
-            if (getBalance((*node)->right) == -1) {
+            if (getBalance((*node)->right) == -1 || getBalance((*node)->right) == 0) {
                 left_rotate(node);
             } else if (getBalance((*node)->right) == 1) {
                 right_rotate(&((*node)->right));

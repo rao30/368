@@ -1,5 +1,8 @@
 #ifndef TREE_H
 #define TREE_H
+
+#include <stdio.h>
+#include <stdlib.h>
 typedef struct Node {
 	int key;
 	int balance;
@@ -43,6 +46,10 @@ void right_rotate(Node **root);
 void free_Tree(Node *root);
 
 Node *maxNode(Node* node);
+
+int preOrder(Node *root, FILE* fp);
+
+char binaryPattern(Node *node);
 
 #endif
 
