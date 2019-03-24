@@ -66,8 +66,11 @@ int main(int argc, char *argv[]) {
 		FILE *writeFile = fopen(argv[3], "wb");
 		if(writeFile == NULL) {
 			free(root);
+			fclose(fp);
 			return EXIT_FAILURE;
 		}
+		fclose(fp);
+		fclose(writeFile);
 		preOrder(root, writeFile);
 		free_Tree(root);
 	}
