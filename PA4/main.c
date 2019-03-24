@@ -30,16 +30,24 @@ int main(int argc, char *argv[]) {
 	if(strcmp(argv[1],"-b") == 0) {
 		FILE *fp = fopen(argv[2], "rb");
 		if (fp == NULL) {
+			printf("%d\n", -1);
 			return EXIT_FAILURE;
 		}
 		int val;
 		char ch;
 		int flag = 1;
+		int readCheck;
 		rewind(fp);
 		Node *root = NULL;
 		while(!feof(fp)) {
-			fread(&val, sizeof(int), 1, fp);
-			fread(&ch, sizeof(char), 1, fp);
+			readCheck = fread(&val, sizeof(int), 1, fp);
+			if(readCheck != 1) {
+				break;
+			}
+			readCheck = fread(&ch, sizeof(char), 1, fp);
+			if(readCheck != 1) {
+				break;
+			}
 			if(ch == 'i') {
 				if(flag == 1) {
 					root = insert(root, val);
@@ -61,8 +69,9 @@ int main(int argc, char *argv[]) {
 			return EXIT_FAILURE;
 		}
 		preOrder(root, writeFile);
-
+		free_Tree(root);
 	}
+
 	//binarytoText(argv[1]);
 }
 //int main(int argc, char *argv[]) {
