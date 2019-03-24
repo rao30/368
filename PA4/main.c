@@ -52,6 +52,7 @@ int main(int argc, char *argv[]) {
 	insert(root, 140);
 	update_balance(root);
 	delete(&root, 140);
+	delete(&root, 120);
 	balance(&root);
     inOrder(root);
     printf("\n\n");

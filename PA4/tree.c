@@ -59,8 +59,13 @@ void delete(Node** node, int k)
         delete(&((*node)->right), k);
     else {
         if((*node)->left == NULL && (*node)->right == NULL) {
-            free_Tree(*node);
+            free(*node);
             *node = NULL;
+        }
+        else if((*node)->left == NULL) {
+            Node *temp = *node;
+            *node = ((*node)->right);
+            free(temp);
         }
     }
 
@@ -231,5 +236,5 @@ void free_Tree(Node *root) {
     }
     free_Tree(root -> left);
     free_Tree(root -> right);
-    free(&root);
+    free(root);
 }
