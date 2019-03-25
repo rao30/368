@@ -74,7 +74,7 @@ int main(int argc, char *argv[]) {
 		update_balance(root);
 		binaryTreeCheck(root, &prevVal, &isBST, &isBalanced);
 		printf("%d,%d,%d",readStatus, isBST, isBalanced);
-		preOrderPrint(root);
+//		preOrderPrint(root);
 		free_Tree(root);
 		fclose(fp);
 	}
