@@ -47,13 +47,13 @@ int preOrder(Node *root, FILE *fp) {
         k = root->key;
         int len = fwrite(&k, sizeof(int), 1, fp);
         if (len != 1) {
-            printf("%d\n", 0);
+       //     printf("%d\n", 0);
             return EXIT_FAILURE;
         }
         ch = binaryPattern(root);
         len = fwrite(&ch, sizeof(char), 1, fp);
         if (len != 1) {
-            printf("%d\n", 0);
+          //  printf("%d\n", 0);
             return EXIT_FAILURE;
         }
 
