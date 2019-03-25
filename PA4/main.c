@@ -74,29 +74,29 @@ int main(int argc, char *argv[]) {
 		update_balance(root);
 		binaryTreeCheck(root, &prevVal, &isBST, &isBalanced);
 		printf("%d,%d,%d",readStatus, isBST, isBalanced);
-//		preOrderPrint(root);
-		free(fp);
+		preOrderPrint(root);
 		free_Tree(root);
+		fclose(fp);
 	}
 }
 
-void binarytoText(char *filename) {
-	//Processing file name to get size
-	FILE *fp = fopen(filename, "rb");
-	char *txtname = strcat(filename, ".txt");
-	FILE *writeFile = fopen("ops.txt","w");
-	int val;
-	char ch;
-	if (fp == NULL) {
-		printf("reading file failed");
-		return;
-	}
-	rewind(fp);
-	while(!feof(fp)) {
-		fread(&val, sizeof(int), 1, fp);
-		fread(&ch, sizeof(char), 1, fp);
-		fprintf(writeFile, "%d %c\n",val,ch);
-	}
-	fclose(fp);
-	fclose(writeFile);
-}
+//void binarytoText(char *filename) {
+//	//Processing file name to get size
+//	FILE *fp = fopen(filename, "rb");
+//	char *txtname = strcat(filename, ".txt");
+//	FILE *writeFile = fopen("ops.txt","w");
+//	int val;
+//	char ch;
+//	if (fp == NULL) {
+//		printf("reading file failed");
+//		return;
+//	}
+//	rewind(fp);
+//	while(!feof(fp)) {
+//		fread(&val, sizeof(int), 1, fp);
+//		fread(&ch, sizeof(char), 1, fp);
+//		fprintf(writeFile, "%d %c\n",val,ch);
+//	}
+//	fclose(fp);
+//	fclose(writeFile);
+//}

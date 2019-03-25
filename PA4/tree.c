@@ -338,20 +338,21 @@ void constructTree(FILE *fp, Node **root, char type, int *status) {
     if (feof(fp)) {
         return;
     }
-    (*root) = create_node(val);
-    (*root)->type = type;
-    if (ch == 0x00) {
-        return;
-    }
-    else if (type == 0x03) {
-        constructTree(fp, &(*root)->left, (*root)->type, status);
-        constructTree(fp, &(*root)->right,(*root)->type, status);
-    } else if (type == 0x02) {
-        (*root)->right = NULL;
-        constructTree(fp, &(*root)->left, (*root)->type, status);
-    } else if (type == 0x01) {
-        (*root)->left = NULL;
-        constructTree(fp, &(*root)->right,(*root)->type, status);
+    else {
+        (*root) = create_node(val);
+        (*root)->type = type;
+        if (ch == 0x00) {
+            return;
+        } else if (type == 0x03) {
+            constructTree(fp, &(*root)->left, (*root)->type, status);
+            constructTree(fp, &(*root)->right, (*root)->type, status);
+        } else if (type == 0x02) {
+            (*root)->right = NULL;
+            constructTree(fp, &(*root)->left, (*root)->type, status);
+        } else if (type == 0x01) {
+            (*root)->left = NULL;
+            constructTree(fp, &(*root)->right, (*root)->type, status);
+        }
     }
 }
 
