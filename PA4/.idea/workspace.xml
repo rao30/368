@@ -43,14 +43,14 @@
   <component name="ChangeListManager">
     <list default="true" id="58f5d47d-00a4-4452-b662-b573de943bf5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA4.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA4.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA4.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA4.dir/main.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA4.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA4.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA4.dir/tree.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA4.dir/tree.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA4.dir/tree.c.obj" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/PA4.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/PA4.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tree.c" beforeDir="false" afterPath="$PROJECT_DIR$/tree.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tree.h" beforeDir="false" afterPath="$PROJECT_DIR$/tree.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tree.c" beforeDir="false" afterPath="$PROJECT_DIR$/../tree.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -94,8 +94,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="91" selection-start-line="91" selection-end-line="91" />
+            <state relative-caret-position="336">
+              <caret line="93" column="31" selection-start-line="93" selection-start-column="31" selection-end-line="93" selection-end-column="31" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -106,8 +106,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tree.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="758">
-              <caret line="360" lean-forward="true" selection-start-line="360" selection-end-line="360" />
+            <state relative-caret-position="328">
+              <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -115,8 +115,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tree.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+            <state relative-caret-position="408">
+              <caret line="63" column="37" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
               <folding>
                 <element signature="e#31#49#0" expanded="true" />
               </folding>
@@ -140,6 +140,7 @@
       <find>deque</find>
       <find>deq</find>
       <find>free</find>
+      <find>max</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -156,8 +157,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="85" />
-    <option name="y" value="25" />
+    <option name="x" value="115" />
+    <option name="y" value="-12" />
     <option name="width" value="1750" />
     <option name="height" value="980" />
   </component>
@@ -200,7 +201,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="PA4" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-e tree3.b" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PA4" TARGET_NAME="PA4" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="PA4" RUN_TARGET_NAME="PA4">
+    <configuration name="PA4" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-e tree0.b" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PA4" TARGET_NAME="PA4" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="PA4" RUN_TARGET_NAME="PA4">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -216,12 +217,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553358173176</updated>
-      <workItem from="1553358174600" duration="62197000" />
+      <workItem from="1553358174600" duration="65966000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62197000" />
+    <option name="totallyTimeSpent" value="65966000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -291,19 +292,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.c</url>
-          <line>91</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/tree.c</url>
-          <line>62</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/tree.c</url>
-          <line>336</line>
-          <option name="timeStamp" value="51" />
+          <line>30</line>
+          <option name="timeStamp" value="64" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -368,8 +359,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tree.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+        <state relative-caret-position="408">
+          <caret line="63" column="37" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
           <folding>
             <element signature="e#31#49#0" expanded="true" />
           </folding>
@@ -378,8 +369,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="91" selection-start-line="91" selection-end-line="91" />
+        <state relative-caret-position="336">
+          <caret line="93" column="31" selection-start-line="93" selection-start-column="31" selection-end-line="93" selection-end-column="31" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
@@ -388,8 +379,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tree.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="758">
-          <caret line="360" lean-forward="true" selection-start-line="360" selection-end-line="360" />
+        <state relative-caret-position="328">
+          <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
         </state>
       </provider>
     </entry>

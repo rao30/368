@@ -49,13 +49,19 @@ void free_Tree(Node *root);
 
 Node *maxNode(Node* node);
 
+Node *minNode(Node* node);
+
 //int preOrder(Node *root, FILE* fp);
 
-int preOrder(Node *root);
+int preOrder(Node *root, FILE *fp);
+
+int preOrderPrint(Node *root);
 
 char binaryPattern(Node *node);
 
-void constructTree(FILE *fp, Node **root, char type);
+void constructTree(FILE *fp, Node **root, char type, int *status);
+
+void binaryTreeCheck(Node *root,int *prevVal, int *isBST, int *isBalanced);
 
 Node *pop(Node **head);
 

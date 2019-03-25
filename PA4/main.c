@@ -2,26 +2,7 @@
 #include "tree.h"
 #include <stdio.h>
 #include <string.h>
-void binarytoText(char *filename) {
-	//Processing file name to get size
-	FILE *fp = fopen(filename, "rb");
-	char *txtname = strcat(filename, ".txt");
-	FILE *writeFile = fopen("ops.txt","w");
-	int val;
-	char ch;
-	if (fp == NULL) {
-		printf("reading file failed");
-		return;
-	}
-	rewind(fp);
-	while(!feof(fp)) {
-		fread(&val, sizeof(int), 1, fp);
-		fread(&ch, sizeof(char), 1, fp);
-		fprintf(writeFile, "%d %c\n",val,ch);	
-	}
-	fclose(fp);
-	fclose(writeFile);
-}
+
 
 int main(int argc, char *argv[]) {
 	if(argc < 3) {
@@ -69,85 +50,52 @@ int main(int argc, char *argv[]) {
 			fclose(fp);
 			return EXIT_FAILURE;
 		}
-//****uncomment this after testing
-//		preOrder(root, writeFile);
+		preOrder(root, writeFile);
 		free_Tree(root);
 		fclose(fp);
 		fclose(writeFile);
 	}
+
 	if(strcmp(argv[1],"-e") == 0 && argc == 3) {
-		FILE *fp = fopen(argv[2], "rb");
-//		int val;
-//		char ch;
-//		rewind(fp);
-//		fread(&val, sizeof(int), 1, fp);
-//		fread(&ch, sizeof(char), 1, fp);
-		//Node *root = create_node(val);
-//		Node *root = create_node(val);
-	//	root->type = ch;
-//	rewind(fp);
 		Node *root = malloc(sizeof(Node));
-	//	rewind(fp);
-		constructTree(fp, &root, 0x03);
-		preOrder(root);
+		int readStatus = 1;
+		int isBST = 1;
+		int isBalanced = 1;
+		int prevVal;
+		FILE *fp = fopen(argv[2], "rb");
+		if(fp == NULL) {
+			readStatus = -1;
+		}
+		if(readStatus == 1){
+			constructTree(fp, &root, 0x03, &readStatus);
+		}
+		Node *min = minNode(root);
+		prevVal = min->key;
+		update_balance(root);
+		binaryTreeCheck(root, &prevVal, &isBST, &isBalanced);
+		printf("%d,%d,%d",readStatus, isBST, isBalanced);
+//		preOrderPrint(root);
+		free_Tree(root);
 	}
-
-	//binarytoText(argv[1]);
 }
-//int main(int argc, char *argv[]) {
-//	//binarytoText(argv[1]);
-//	Node *root = NULL;
-//	root = insert(root, 100);
-//    insert(root, 20);
-//	insert(root, 120);
-//	insert(root, 15);
-//	insert(root, 10);
-//	insert(root, 130);
-//	insert(root, 140);
-//	insert(root, 140);
-//	//insert(root, 30);
-//	insert(root, 5);
-//	insert(root, 500);
-//    insert(root, 10);
-//    insert(root, 30);
-//    insert(root, 40);
-//	insert(root, 50);
-//    update_balance(root);
-//	printf("\n\n");
-//
-//    balance(&root);
-//
-//	balance_inOrder(root);
-//	printf("\n\n");
-//	balance(&root);
-//
-//    inOrder(root);
-//    printf("\n\n");
-//	balance_inOrder(root);
-//	depth_inOrder(root);
-//	//balance_inOrder(root);
-//	free_Tree(root);
-//
-//    return EXIT_SUCCESS;
-//}
 
-/*int List_Save_To_File(char *filename, Node *list) {
-	FILE *fp = fopen(filename, "wb");
-	int writeSize = 0;
-	long val;
-	if(fp == NULL) {
-		return EXIT_FAILURE;
+void binarytoText(char *filename) {
+	//Processing file name to get size
+	FILE *fp = fopen(filename, "rb");
+	char *txtname = strcat(filename, ".txt");
+	FILE *writeFile = fopen("ops.txt","w");
+	int val;
+	char ch;
+	if (fp == NULL) {
+		printf("reading file failed");
+		return;
 	}
 	rewind(fp);
-//	Node *n = list;
-	while(1) {
-		val = list->value;
-		writeSize = writeSize +  fwrite(&val, sizeof(long), 1, fp);
-		if(list->next == NULL) {
-			break;
-		}
-		list = list->next;
+	while(!feof(fp)) {
+		fread(&val, sizeof(int), 1, fp);
+		fread(&ch, sizeof(char), 1, fp);
+		fprintf(writeFile, "%d %c\n",val,ch);
 	}
 	fclose(fp);
-	return writeSize;
-} */
+	fclose(writeFile);
+}
