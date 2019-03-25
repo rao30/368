@@ -42,6 +42,7 @@ int main(int argc, char *argv[]) {
 			}
 			else if(ch == 'd') {
 				delete(&root, val);
+				balance(&root);
 			}
 		}
 		FILE *writeFile = fopen(argv[3], "wb");

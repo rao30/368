@@ -155,7 +155,7 @@ void delete(Node** node, int k)
         else {
             Node *max = maxNode((*node)->left);
             int tempK = max->key;
-            delete(&root, max->key);
+            delete(&max, max->key);
             (*node)->key = tempK;
             return;
         }
