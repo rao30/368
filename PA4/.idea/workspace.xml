@@ -194,7 +194,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="PA4" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-e tree0.b" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PA4" TARGET_NAME="PA4" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="PA4" RUN_TARGET_NAME="PA4">
+    <configuration name="PA4" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-b op0.b outty" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PA4" TARGET_NAME="PA4" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="PA4" RUN_TARGET_NAME="PA4">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>

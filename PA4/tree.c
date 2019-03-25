@@ -57,7 +57,7 @@ int preOrder(Node *root, FILE *fp) {
             return EXIT_FAILURE;
         }
 
-        printf("%d %c\n",k, ch);
+      //  printf("%d %c\n",k, ch);
 
         status = preOrder(root->left, fp);
         if (status == EXIT_FAILURE) {
