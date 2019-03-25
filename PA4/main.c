@@ -57,7 +57,7 @@ int main(int argc, char *argv[]) {
 	}
 
 	if(strcmp(argv[1],"-e") == 0 && argc == 3) {
-		Node *root = malloc(sizeof(Node));
+		Node *root = create_node(-1);
 		int readStatus = 1;
 		int isBST = 1;
 		int isBalanced = 1;
