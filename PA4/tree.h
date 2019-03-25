@@ -8,8 +8,10 @@ typedef struct Node {
 	int balance;
 	int depth;
 	int height;
+	char type;
 	struct Node *left;
 	struct Node *right;
+	struct Node *next;
 } Node;
 
 
@@ -47,9 +49,19 @@ void free_Tree(Node *root);
 
 Node *maxNode(Node* node);
 
-int preOrder(Node *root, FILE* fp);
+//int preOrder(Node *root, FILE* fp);
+
+int preOrder(Node *root);
 
 char binaryPattern(Node *node);
+
+void constructTree(FILE *fp, Node **root, char type);
+
+Node *pop(Node **head);
+
+Node *push(Node *head, Node *newNode);
+
+
 
 #endif
 

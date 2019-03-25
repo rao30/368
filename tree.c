@@ -49,7 +49,7 @@ TreeNode *pop(TreeNode **head) {
     if (*head != NULL) {
     TreeNode *popped = *head;
         *head = (*head)->next;
-    return popped;
+    return popped;2
     }
     return NULL;
 }

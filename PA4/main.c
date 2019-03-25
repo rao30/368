@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
 	if(argc < 3) {
 		return EXIT_FAILURE;
 	}
-	if(strcmp(argv[1],"-b") == 0) {
+	if(strcmp(argv[1],"-b") == 0 && argc == 4) {
 		FILE *fp = fopen(argv[2], "rb");
 		if (fp == NULL) {
 			printf("%d\n", -1);
@@ -69,11 +69,27 @@ int main(int argc, char *argv[]) {
 			fclose(fp);
 			return EXIT_FAILURE;
 		}
-
-		preOrder(root, writeFile);
+//****uncomment this after testing
+//		preOrder(root, writeFile);
 		free_Tree(root);
 		fclose(fp);
 		fclose(writeFile);
+	}
+	if(strcmp(argv[1],"-e") == 0 && argc == 3) {
+		FILE *fp = fopen(argv[2], "rb");
+//		int val;
+//		char ch;
+//		rewind(fp);
+//		fread(&val, sizeof(int), 1, fp);
+//		fread(&ch, sizeof(char), 1, fp);
+		//Node *root = create_node(val);
+//		Node *root = create_node(val);
+	//	root->type = ch;
+//	rewind(fp);
+		Node *root = malloc(sizeof(Node));
+	//	rewind(fp);
+		constructTree(fp, &root, 0x03);
+		preOrder(root);
 	}
 
 	//binarytoText(argv[1]);

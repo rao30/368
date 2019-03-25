@@ -21,37 +21,48 @@ void inOrder(Node *root)
     }
 }
 
-int preOrder(Node *root, FILE *fp) {
-    int status = EXIT_SUCCESS;
-    int k;
-    char ch;
-    if (root != NULL) {
-        k = root->key;
-        int len = fwrite(&k, sizeof(int), 1, fp);
-        if (len != 1) {
-            printf("%d\n", 0);
-            return EXIT_FAILURE;
-        }
-        ch = binaryPattern(root);
-        len = fwrite(&ch, sizeof(char), 1, fp);
-        if (len != 1) {
-            printf("%d\n", 0);
-            return EXIT_FAILURE;
-        }
+//int preOrder(Node *root, FILE *fp) {
+//    int status = EXIT_SUCCESS;
+//    int k;
+//    char ch;
+//    if (root != NULL) {
+//        k = root->key;
+//        int len = fwrite(&k, sizeof(int), 1, fp);
+//        if (len != 1) {
+//            printf("%d\n", 0);
+//            return EXIT_FAILURE;
+//        }
+//        ch = binaryPattern(root);
+//        len = fwrite(&ch, sizeof(char), 1, fp);
+//        if (len != 1) {
+//            printf("%d\n", 0);
+//            return EXIT_FAILURE;
+//        }
+//
+//        printf("%d %c\n",k, ch);
+//
+//        status = preOrder(root->left, fp);
+//        if (status == EXIT_FAILURE) {
+//            return EXIT_FAILURE;
+//        }
+//
+//        status = preOrder(root->right, fp);
+//        if (status == EXIT_FAILURE) {
+//            return EXIT_FAILURE;
+//        }
+//    }
+//    return EXIT_SUCCESS;
+//}
 
-        printf("%d %c\n",k, ch);
-
-        status = preOrder(root->left, fp);
-        if (status == EXIT_FAILURE) {
-            return EXIT_FAILURE;
-        }
-
-        status = preOrder(root->right, fp);
-        if (status == EXIT_FAILURE) {
-            return EXIT_FAILURE;
-        }
+int preOrder(Node *root) {
+    if(root == NULL) {
+        return 0;
     }
-    return EXIT_SUCCESS;
+    int k = root->key;
+    char ch = root->type;
+        printf("%d %c\n",k, ch);
+        preOrder(root->left);
+        preOrder(root->right);
 }
 
 char binaryPattern(Node *node) {
@@ -65,7 +76,7 @@ char binaryPattern(Node *node) {
         return 0x02;
     }
     else {
-        return 0x03;
+        return 0x03  ;
     }
 }
 
@@ -292,6 +303,62 @@ Node *maxNode(Node* node)
     }
     return current;
 }
+
+//Node *constructTree(FILE *fp, Node *root, char type) {
+//    int val;
+//    char ch;
+//    fread(&val, sizeof(int), 1, fp);
+//    fread(&ch, sizeof(char), 1, fp);
+//    Node *new = create_node(val);
+//    if(type == 0x03) {
+//        constructTree(fp, root->left, ch);
+//        constructTree(fp, root->right, ch);
+//        return root;
+//    }
+//    if(type == 0x02) {
+//        root->right = NULL;
+//        constructTree(fp, root->left, ch);
+//        return new;
+//    }
+//    if(type == 0x01) {
+//        root->left = NULL;
+//        constructTree(fp, root->right, ch);
+//        return new;
+//    }
+//    if(type == 0x00) {
+//        root->left = NULL;
+//        root->right = NULL;
+//        return new;
+//    }
+//    return new;
+//}
+//
+void constructTree(FILE *fp, Node **root, char type) {
+    int val;
+    char ch;
+//    while(!feof(fp)) {
+    fread(&val, sizeof(int), 1, fp);
+    fread(&ch, sizeof(char), 1, fp);
+    if (feof(fp)) {
+        return;
+    }
+    (*root) = create_node(val);
+    (*root)->type = type;
+    if (ch == 0x00) {
+        return;
+    }
+    else if (type == 0x03) {
+        constructTree(fp, &(*root)->left, (*root)->type);
+        constructTree(fp, &(*root)->right,(*root)->type);
+    } else if (type == 0x02) {
+        (*root)->right = NULL;
+        constructTree(fp, &(*root)->left, (*root)->type);
+    } else if (type == 0x01) {
+        (*root)->left = NULL;
+        constructTree(fp, &(*root)->right,(*root)->type);
+    }
+}
+
 
 void free_Tree(Node *root) {
     if (root == NULL) {
