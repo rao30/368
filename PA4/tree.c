@@ -53,11 +53,9 @@ int preOrder(Node *root, FILE *fp) {
         ch = binaryPattern(root);
         len = fwrite(&ch, sizeof(char), 1, fp);
         if (len != 1) {
-          //  printf("%d\n", 0);
             return EXIT_FAILURE;
         }
 
-      //  printf("%d %c\n",k, ch);
 
         status = preOrder(root->left, fp);
         if (status == EXIT_FAILURE) {
@@ -110,26 +108,21 @@ void balance_inOrder(Node *root)
 
 Node* insert(Node* node, int k)
 {
-    /* If the tree is empty, return a new node */
     if (node == NULL) return create_node(k);
 
-    /* Otherwise, recur down the tree */
     if (k <= node->key)
         node->left  = insert(node->left, k);
     else if (k > node->key)
         node->right = insert(node->right, k);
 
-    /* return the (unchanged) node pointer */
     return node;
 }
 
 void delete(Node** node, int k)
 {
     Node *root = *node;
-    /* If the tree is empty, return a new node */
     if ((*node) == NULL) return;
 
-        /* Otherwise, recur down the tree */
     else if (k < (*node)->key)
         delete(&((*node)->left), k);
     else if (k > (*node)->key)
@@ -155,13 +148,12 @@ void delete(Node** node, int k)
         else {
             Node *max = maxNode((*node)->left);
             int tempK = max->key;
-            delete(&max, max->key);
+            delete(node, max->key);
             (*node)->key = tempK;
             return;
         }
     }
 
-    /* return the (unchanged) node pointer */
 }
 
 
@@ -291,35 +283,7 @@ Node *minNode(Node* node)
     return current;
 }
 
-//Node *constructTree(FILE *fp, Node *root, char type) {
-//    int val;
-//    char ch;
-//    fread(&val, sizeof(int), 1, fp);
-//    fread(&ch, sizeof(char), 1, fp);
-//    Node *new = create_node(val);
-//    if(type == 0x03) {
-//        constructTree(fp, root->left, ch);
-//        constructTree(fp, root->right, ch);
-//        return root;
-//    }
-//    if(type == 0x02) {
-//        root->right = NULL;
-//        constructTree(fp, root->left, ch);
-//        return new;
-//    }
-//    if(type == 0x01) {
-//        root->left = NULL;
-//        constructTree(fp, root->right, ch);
-//        return new;
-//    }
-//    if(type == 0x00) {
-//        root->left = NULL;
-//        root->right = NULL;
-//        return new;
-//    }
-//    return new;
-//}
-//
+
 void constructTree(FILE *fp, Node **root, char type, int *status) {
     int val;
     char ch;
