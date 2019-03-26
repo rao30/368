@@ -104,23 +104,23 @@ TreeNode *make_tree(TreeNode **head) {
 
 void insert(TreeNode **head, TreeNode **node) {
 	TreeNode *temp = (*head);
-	TreeNode *insert = (*node);
+	TreeNode *ins = (*node);
 	while(1) {
 		if(temp==NULL) {
 			end_queue((*head), (*node));
 			break;
 		}
-		else if(insert->count > temp -> count) {
+		else if(ins->count > temp -> count) {
 			temp = temp -> front;
 		}
-		else if(((insert->count) == (temp -> count)) && ((insert -> ch) >= (temp -> ch))) {
+		else if(((ins->count) == (temp -> count)) && ((ins -> ch) >= (temp -> ch))) {
 			temp = temp ->front;
 		}
 		else {
-			insert->front = temp;
-			insert->rear = temp->rear;
-			temp->rear->front = insert;
-			temp->rear = insert;
+			ins->front = temp;
+			ins->rear = temp->rear;
+			temp->rear->front = ins;
+			temp->rear = ins;
 			break;
 
 		}
@@ -171,22 +171,37 @@ void print_tree(TreeNode *tn, FILE *fp) {
 
 }
 
-void traverse(TreeNode *tn, FILE*fp, char *code) {
-	char *arrl;
-	char *arrr;
-	char left[] = "0";
-	char right[] = "1";
-	arrl = malloc(sizeof(char)* strlen(code));
-	arrr = malloc(sizeof(char)* strlen(code));
-	strcpy(arrl,code);
-	strcpy(arrr,code);
+
+void traverse(TreeNode *tn, FILE*fp, char *code, char list[], char vals[][256], long *counter) {
+	char arrl[256] = {'\0'};
+	char arrr[256] = {'\0'};
+	char *left = "0";
+	char *right = "1";
 	if((tn) == NULL) {
 		return;
 	}
-	traverse((tn)->left, fp, strcat(arrl,left));
-	traverse((tn)->right,fp, strcat(arrr,right));
+//	arrl = malloc(sizeof(char) * (strlen(code)+1));
+//	arrr = malloc(sizeof(char) * (strlen(code)+1));
+	strcpy(arrl,code);
+	strcpy(arrr,code);
+	strcat(arrl,left);
+	strcat(arrr,right);
+
+	traverse((tn)->left, fp, arrl, list,vals,counter);
+	//free(arrl);
+	traverse((tn)->right,fp, arrr,list,vals,counter);
+	//free(arrr);
 	if((tn)->ch < 256) {
-		fprintf(fp,"%c:%s\n",(tn)->ch,code);
+		//	fprintf(fp,"%c:%s\n",(tn)->ch,code);
+		//	list[*counter] = malloc(sizeof(char));
+		//	char* c = (char)(tn)->ch;
+		list[*counter] = (char)(tn)->ch;
+	//	vals[*counter] = malloc(sizeof(char)*strlen(code));
+		strcpy(vals[*counter], code);
+		fprintf(fp,"%c:%s\n",list[*counter],vals[*counter]);
+
+//		fprintf(fp,"%c:%s\n",list[*counter],code);
+		*counter = *counter+1;
 	}
 }
 void end_queue(TreeNode *head, TreeNode *end) {
@@ -252,8 +267,9 @@ void traverse2(TreeNode *tn, FILE *fp) {
 	if((tn) == NULL) {
 		return;
 	}
-	traverse2((tn)->left,fp);
-	traverse2((tn)->right,fp);
+
+	//	traverse2((tn)->left,fp);
+	//	traverse2((tn)->right,fp);
 	if((tn -> ch) < 256) {
 		fprintf(fp,"%c%c",'1',(tn)->ch);
 		return;
@@ -261,8 +277,179 @@ void traverse2(TreeNode *tn, FILE *fp) {
 	else {
 		fprintf(fp, "0");
 	}
+	traverse2((tn)->left,fp);
+	traverse2((tn)->right,fp);
+}
+//FUNCTIONS TO PRINT COMPRESSED FILE
+void printdoubles(FILE *fp, long c1, long c2, long c3) {
+	if(fp == NULL) {
+		return;
+	}
+	c1 = c1+c2+24;
+	fwrite(&c1,sizeof(long),1, fp);
+	fwrite(&c2,sizeof(long),1, fp);
+	fwrite(&c3,sizeof(long),1, fp);
+
 }
 
+void printTree(FILE *treeTop, FILE *fp2, long *c2) {
+	rewind(treeTop);
+	unsigned char valWrite = 0x00;
+	unsigned char mask = 0xFF;
+	int shift = 0;
+	unsigned char ch;
+	int flag = 0;
+	while(1) {
+		ch = fgetc(treeTop);
+
+		if(feof(treeTop)) {
+			if(shift > 0) {
+				fprintf(fp2, "%c", valWrite);
+				*c2 = *c2+1;
+				shift = 0;
+				valWrite = 0x00;
+			}
+			break;
+
+		}
+		mask = 0xFF;
+		if((ch == '0') && (flag == 0)) {
+			shift = shift+1;
+		}
+		else if((ch == '1') && (flag == 0)) {
+			flag = 1;
+			unsigned char tempMask = 0x01;
+			tempMask = tempMask << shift;
+			valWrite = valWrite | tempMask;
+			shift = shift+1;
+		}
+		else if((ch < 256) && (ch > -1)) {
+			flag = 0;
+			int numbits = 8-shift;
+			unsigned char tempMask = (mask >> (8- numbits));
+			tempMask = (ch & tempMask) << shift;
+			valWrite = valWrite | tempMask;
+			fprintf(fp2, "%c", valWrite);
+			*c2 = *c2+1;
+			tempMask = (mask >> numbits) << numbits;
+			tempMask = (ch & tempMask) >> numbits;
+			valWrite = 0x00 | tempMask;
+			shift = 8-numbits;
+		}
+		if (shift == 8) {
+			fprintf(fp2, "%c", valWrite);
+			*c2 = *c2+1;
+			valWrite = 0x00;
+			shift = 0;
+
+		}
+
+	}
+}
+void printCompress(FILE *input, FILE *output, char list[][256], char chars[], long *c1, long counter) {
+	rewind(input);
+	char ch;
+	int index=0;
+	int index2=0;
+	char bits;
+	int shift = 0;
+	unsigned char valWrite = 0x00;
+	unsigned char mask = 0xFF;
+	long ct = 0;
+	//	while(1){
+	for(long i = 0; i < counter; i++) {
+		ch = fgetc(input);
+		ct = ct+1;
+		if(feof(input)) {
+			if(shift > 0) {
+				shift = 0;
+				fprintf(output, "%c",valWrite);
+				*c1 = *c1+1;
+			}
+			break;
+
+		}
+		index = 0;
+		while(1) {
+			if(ch == chars[index]) {
+				//	printf("%c == %c\n", ch, chars[index]);
+				index2 = 0;
+				while(1) {
+					bits = list[index][index2];
+					//		printf("%c == %c\n", ch, bits);
+					if(shift == 8) {
+						fprintf(output, "%c", valWrite);
+						*c1 = *c1+1;
+						valWrite = 0x00;
+						shift = 0;
+					}
+					if(bits == '\0') {
+						break;
+					}
+					mask = 0xFF;
+					if(bits == '0') {
+						shift = shift+1;
+					}
+
+					else if(bits == '1') {
+						unsigned char tempMask = 0x01;
+						tempMask = tempMask << shift;
+						valWrite = valWrite | tempMask;
+						shift = shift+1;
+					}
+					//		printf("value of shift: %d\n",shift);
+					index2 = index2+1;
+
+				}
+				break;
+			}
+			//	if(ch <0) {
+			//		break;
+			//	}
+			index = index+1 ;
+		}
+
+	}
+	if(shift > 0) {
+		shift = 0;
+		fprintf(output, "%c",valWrite);
+		*c1 = *c1+1;
+	}
+
+}
+
+void listArray(FILE *list, char *table[], int chars[]) {
+	rewind(list);
+	int flag = 0;
+	int count = 0;
+	int arrcounter = 0;
+	char *arr;
+	char *ch = NULL;
+	while(1) {
+		*ch = fgetc(list);
+		if(flag == 1) {
+			if (*ch != ':' && *ch != '\n') {
+				arrcounter++;
+				arr = malloc(sizeof(char)*(strlen(table[count])+1));
+				arr = strcat(table[count],ch);
+				strcpy(arr,table[count]);
+			}
+			if(*ch == '\n') {
+				arrcounter = 0;
+				count++;
+				flag = 0;
+			}
+		}
+		if(flag == 0) {
+			flag = 1;
+			chars[count] = *ch;
+		}
+
+		if(feof(list)) {
+			break;
+		}
+	}
+}
 void traverse3(TreeNode *tn, FILE *fp , int *shift, int *ch) {
 	if((tn) == NULL) {
 		return;
@@ -304,8 +491,6 @@ void free_Tree(TreeNode *t) {
 	if (t == NULL) {
 		return;
 	}
-	free_Tree(t -> front);
-	free_Tree(t -> rear);
 	free_Tree(t -> left);
 	free_Tree(t -> right);
 	free(t);

@@ -46,9 +46,19 @@ TreeNode *front(TreeNode *head);
 
 void insert(TreeNode **head, TreeNode **merged);
 
-void traverse(TreeNode *tn, FILE*fp, char *code);
+void traverse(TreeNode *tn, FILE*fp, char *code, char chars[], char list[][256], long *counter);
 
 void traverse2(TreeNode *tn, FILE *fp);
 
 void traverse3(TreeNode *tn, FILE *fp, int *shift, int*ch);
+
+//FUNCTIONS TO CREATE COMPRESSED FILE
+
+void printdoubles(FILE *fp, long c1, long c2, long c3);
+
+void printTree(FILE *fp1, FILE *fp2, long *c2);
+
+void printCompress(FILE *input, FILE *output,char list[][256], char chars[], long *c1, long counter);
+
+void listArray(FILE*list, char*table[],int chars[]);
 #endif

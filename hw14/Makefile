@@ -1,8 +1,19 @@
-.PHONY: clean All
+TARGET = huff
+GCC = gcc
+CFLAGS = -g -std=c99 -Wall -Wshadow -Wvla -Werror -pedantic
+CC = $(GCC) $(CFLAGS)
+SRCS = huffman.c huffman_main.c
+OBJS = $(SRCS:%.c=%.o)
+	VALGRIND = valgrind --tool=memcheck --verbose --log-file
 
-All:
-	@echo "----------Building project:[ hw14 - Debug ]----------"
-	@"$(MAKE)" -f  "hw14.mk"
+$(TARGET): $(OBJS)
+	$(CC) $(OBJS) -o $(TARGET)
+
+test:
+	$(VALGRIND)=./valgrind.log
+
+.c.o:
+	$(GCC) $(CFLAGS) -c $*.c
+
 clean:
-	@echo "----------Cleaning project:[ hw14 - Debug ]----------"
-	@"$(MAKE)" -f  "hw14.mk" clean
+	rm -f $(OBJS) $(TARGET)
