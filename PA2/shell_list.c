@@ -139,41 +139,27 @@ static List* generateListSequence(int sequence) {
     return list;
 }
 
-static List* createList(List* list, int sequence) {
-    List* temp = list;
+static List* createList(Node* nodeHead, int sequence) {
+    Node *tempNode = nodeHead;
     List* newList = generateListSequence(sequence);
     List* head = newList;
-
-    int flag = 1;
     while(1) {
-        if(temp == NULL) {
-            temp = list;
-            if(temp->node == NULL) {
-                break;
-            }
-        }
-        if(flag == 0) {
-            if(temp->node == NULL) {
-                break;
-            }
+        if(nodeHead == NULL) {
+            break;
         }
         if(newList == NULL) {
             newList = head;
         }
-        if(newList->node == NULL) {
-            newList->node = temp->node;
+        if(newList->node == NULL && newList->next != NULL) {
+            newList->node = tempNode;
             newList = newList->next;
-            temp->node = temp->node->next;
-            temp = temp->next;
+            tempNode = tempNode->next;
         }
         else {
-            append_list(newList->node, temp->node);
+            append_list(newList->node, tempNode);
             newList = newList->next;
-            temp->node = temp->node->next;
-            temp = temp->next;
-
+            tempNode = tempNode->next;
         }
-
     }
     return head;
 }
