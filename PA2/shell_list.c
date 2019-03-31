@@ -49,6 +49,20 @@ static void make_list(Node *head, long val) {
 	}
 }
 
+static void append_list(Node *head, Node *node) {
+    Node *t = node;
+    Node *n = (head);
+    while(1) {
+        if(n -> next == NULL) {
+            t->next = NULL;
+            n -> next = t;
+            break;
+        }
+        n = n -> next;
+    }
+}
+
+
 static Node *currNode(Node *head, int num) {
 	Node *n = head;
 	for(int i = 0; i< num; i++) {
@@ -107,111 +121,96 @@ static Node* removeNode(Node* a, Node*head, int position) {
 	}
 }
 
-static List* makeList() {
+static List* makeList(Node *node) {
 	List* list = malloc(sizeof(List));
 	list->next = NULL;
-	list->node = NULL;
+	list->node = node;
 	return list;
 }
-static List* createList(Node* head, int sequence) {
-	List *list;
-	List *head_list;
-	if(sequence > 0) {
-		head_list = makeList();
-		list = (head_list);
-	}
-	else {
-		return NULL;
-	}
-	for(int i = 1; i < sequence; i++) {
-		while(1) {
-			if(list->next == NULL) {
-				list->next = makeList();
-				list = list->next;
-				break;
-			}
-			else {
-				list = list->next;
-			}
-		}
-	}
-	//Store the nodes in the list;
-	Node* nodes = (head);
-	while(nodes != NULL) {
-		list = head_list;
-		for(int i = 0; i < sequence; i ++) {
-			
-			Node *list_node = list->node;
-			while(1) {
-				if(list->node == NULL) {
-					list->node = nodes;
-					list_node = list->node;
-					nodes = nodes->next;
-					list_node->next = NULL;
-					
-					break;
-				}
-				else if(list_node->next == NULL) {
-					list_node->next = nodes;
-					nodes = nodes->next;
-					list_node->next->next = NULL;
-					break;
-				}
-				else if(nodes != NULL) {
-					list_node = list_node->next;
-				}
 
-			}
-			list = list->next;
-
-		}
-	}
-	return head_list;
-
+static List* generateListSequence(int sequence) {
+    List *list = makeList(NULL);
+    List *tempList = list;
+    for(int i = 1; i < sequence; i++) {
+        tempList->next = makeList(NULL);
+        tempList = tempList->next;
+    }
+    return list;
 }
-static Node* bubbleSortList(Node *list, int size,int sequence, double *comps) { 
-	Node *head = list;
-	int i = 0;
-	int j = 0;
-	int k = 0;
-	int swap_flag = 0;
-	Node* a = NULL;
-	Node* b = NULL;
-	Node*key = NULL;
-	/*	for(i = 0; i < sequence; i++) {
-		for(j = i; j < size; j = j+sequence) {
-		swap_flag = 0;
-		for(k = i; k < size-j-sequence; k = k+sequence) {
-	 *comps = *comps + 1;
-	 a = currNode(head,k);
-	 b = currNode(head,k+sequence);
-	 if(a->value > b->value) {
-	 head = swapNodes(a,k,b,k+sequence,head);
-	 swap_flag = 1;
-	 }
-	 }
-	 if(swap_flag == 0) {
-	 break;
-	 }
-	 } */
-	for(i = 0; i < sequence; i++) {
-		for(j = i+sequence; j < size; j = j+sequence) {
-			key = currNode(head, j);
 
-			k = j-sequence;
-			while(k >= i && (currNode(head,k)->value > key->value)) {
-				*comps = *comps + 1;
-				k = k - sequence;
-			}
-			head = removeNode(key, head, j);
-			head = insertNode(key, head, k+sequence);
-		}
-		//	printList(head);
-	}
-	return head;
+static List* createList(List* list, int sequence) {
+    List* temp = list;
+    List* newList = generateListSequence(sequence);
+    List* head = newList;
+
+    int flag = 1;
+    while(1) {
+        if(temp == NULL) {
+            temp = list;
+            if(temp->node == NULL) {
+                break;
+            }
+        }
+        if(flag == 0) {
+            if(temp->node == NULL) {
+                break;
+            }
+        }
+        if(newList == NULL) {
+            newList = head;
+        }
+        if(newList->node == NULL && newList->next != NULL) {
+            newList->node = temp->node;
+            newList = newList->next;
+            temp->node = temp->node->next;
+            temp = temp->next;
+        }
+        else {
+            append_list(newList->node, temp->node);
+            newList = newList->next;
+            temp->node = temp->node->next;
+            temp = temp->next;
+
+        }
+
+    }
+    return head;
 }
 
 
+static Node* SortList(Node *List)
+{
+    // zero or one element in list
+    if(List == NULL || List->next == NULL)
+        return List;
+    // head is the first element of resulting sorted list
+    Node *head = NULL;
+    while(List != NULL) {
+        Node * current = List;
+        List = List->next;
+        if(head == NULL || current->value < head->value) {
+            // insert into the head of the sorted list
+            // or as the first element into an empty sorted list
+            current->next = head;
+            head = current;
+        } else {
+            // insert current element into proper position in non-empty sorted list
+            Node *p = head;
+            while(p != NULL) {
+                if(p->next == NULL || // last element of the sorted list
+                   current->value < p->next->value) // middle of the list
+                {
+                    // insert into middle of the sorted list or as the last element
+                    current->next = p->next;
+                    p->next = current;
+                    break; // done
+                }
+                p = p->next;
+            }
+        }
+    }
+    return head;
+}
 
 Node *List_Load_From_File(char *filename) {
 	FILE *fp = fopen(filename, "rb");
@@ -270,7 +269,9 @@ Node *List_Shellsort(Node *list, double *n_comp) {
 	int curr_seq = 0;
 	int size = listSize(list);
 	long *sequence = Generate_2p3q_Seq(size, &sequence_size);
-	for(int i = sequence_size-1; i >=0;i--) {
+	List *lists = makeList(list);
+	List *newLists = createList(lists, sequence[sequence_size-1]);
+	/*for(int i = sequence_size-1; i >=0;i--) {
 		curr_seq = sequence[i];
 		List *lists = createList(list, curr_seq);
 		while(1) {
@@ -279,9 +280,11 @@ Node *List_Shellsort(Node *list, double *n_comp) {
 			}
 			printList(lists->node);
 			lists = lists->next;
-		}
-		list = bubbleSortList(list, size, curr_seq, n_comp);
-	}
+		} */
+		//list = bubbleSortList(list, size, curr_seq, n_comp);
+		list = SortList(newLists->node);
+		printList(list);
+	//}
 	free(sequence);
 	return list;
 

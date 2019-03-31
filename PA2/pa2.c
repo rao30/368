@@ -47,6 +47,7 @@ int main(int argc, char* argv[]) {
 	Node *head = List_Load_From_File(argv[2]);
 	double compsA = 0;
 	Node *sortedList = List_Shellsort(head, &compsA);
+	printList(sortedList);
 	printf("%le\n",compsA);
 	List_Save_To_File(argv[3], sortedList);
 	freeList(sortedList);
