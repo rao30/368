@@ -13,6 +13,7 @@ static int listSize(Node *head) {
 		}
 		n = n->next;
 	}
+	printf("counter = %d\n\n\n\n\n\n",counter);
 	return counter;
 }
 
@@ -159,7 +160,7 @@ static List* createList(List* list, int sequence) {
         if(newList == NULL) {
             newList = head;
         }
-        if(newList->node == NULL && newList->next != NULL) {
+        if(newList->node == NULL) {
             newList->node = temp->node;
             newList = newList->next;
             temp->node = temp->node->next;
@@ -271,6 +272,8 @@ Node *List_Shellsort(Node *list, double *n_comp) {
 	long *sequence = Generate_2p3q_Seq(size, &sequence_size);
 	List *lists = makeList(list);
 	List *newLists = createList(lists, sequence[sequence_size-1]);
+	printf("sequence size = %d", sequence[sequence_size-1]);
+
 	/*for(int i = sequence_size-1; i >=0;i--) {
 		curr_seq = sequence[i];
 		List *lists = createList(list, curr_seq);
@@ -283,7 +286,7 @@ Node *List_Shellsort(Node *list, double *n_comp) {
 		} */
 		//list = bubbleSortList(list, size, curr_seq, n_comp);
 		list = SortList(newLists->node);
-		printList(list);
+		printList(newLists->node);
 	//}
 	free(sequence);
 	return list;
