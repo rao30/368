@@ -1,10 +1,17 @@
 #include "sequence.h"
-#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 static long *createLongArray(int size) {
 	long *array = malloc(sizeof(long)*size);
 	return array;
+}
+
+static long powa(long a, long b) {
+	long power = 1;
+	for(long i = 0; i < b; i++) {
+		power = power * a;
+	}
+	return power;
 }
 long *Generate_2p3q_Seq(int length, int *seq_size) {
 	//Variables
@@ -12,9 +19,9 @@ long *Generate_2p3q_Seq(int length, int *seq_size) {
 	long p = 0;
 	long q = 0;
 	long size = 0;
-	while (pow(2,p) < length) {
+	while (powa(2,p) < length) {
 		for (q = 0; q <= p; q++) {
-			seq_num = pow(2, p-q) * pow(3, q);	//Generating sequence number
+			seq_num = powa(2, p-q) * powa(3, q);	//Generating sequence number
 			if(seq_num < length) {
 				size = size + 1;
 			}
@@ -32,9 +39,9 @@ long *Generate_2p3q_Seq(int length, int *seq_size) {
 	p = 0;
 	q = 0;
 	//Store Values in array
-	while (pow(2, p) < length) {
+	while (powa(2, p) < length) {
 		for (q = 0; q <= p; q++) {
-			seq_num = pow(2, p - q) * pow(3, q);	//Generating sequence number
+			seq_num = powa(2, p - q) * powa(3, q);	//Generating sequence number
 			if (seq_num < length) {
 				sequence[size] = seq_num;
 				size = size + 1;

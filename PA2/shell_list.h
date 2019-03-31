@@ -6,6 +6,13 @@ typedef struct _Node {
    struct _Node *next;
 } Node;
 
+
+typedef struct _List {
+	Node *node;
+	struct _List *next;
+} List;
+
+
 Node *List_Load_From_File(char *filename);
 
 int List_Save_To_File(char *filename, Node *list);

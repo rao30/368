@@ -1,20 +1,9 @@
 #include "shell_array.h"
-#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "sequence.h"
-static int getSize(char *filename) {
-	int size = 0;
-	int len = strlen(filename);
-	char *s = (char*)malloc(len - 1);
-	strncpy(s, filename, len - 2);
-	s[len - 2] = '\0';
-	size = atoi(s);
-	free(s);
-//	size = 15;
-	return size;
-}
+
 
 static void printArray(long *array, int size) {
 	for (int i = 0; i < size; i++) {
@@ -25,54 +14,54 @@ static void bubbleSort(long arr[], int size,int sequence, double *comps) {
 	//	*comps =10;
 	int i = 0;
 	int j = 0;
+	int k = 0;
 	int swap_flag = 0;
 	long temp = 0;
-/*	for(i = 0; i < size; i++) {
-		swap_flag = 0;
-		for(j = i+sequence; j < size; j = j+sequence) {
-			*comps = *comps+1;
-			if (arr[j] < arr[i])                //Comparing other array elements
-			{
-				temp = arr[i];         //Using temporary variable for storing last value
-				arr[i] = arr[j];            //replacing value
-				arr[j] = temp;             //storing last value
-		//		j = i+sequence;
-				swap_flag = 1;
+
+/*	for(i = 0; i < sequence; i++) {
+		for(j = i; j < size; j = j+sequence) {
+			swap_flag = 0;
+			for(k = i; k < size-j-sequence; k = k+sequence) {
+				*comps = *comps + 1;
+				if(arr[k] > arr[k+sequence]) {
+					temp = arr[k];
+					arr[k] = arr[k+sequence];
+					arr[k+sequence] = temp;
+					swap_flag = 1;
+				}
+			}
+			if(swap_flag == 0) {
+				break;
 			}
 		}
-	//	if(swap_flag ==) {
-	//	break;
-	//	}
 	} */
-	for(i = 0; i < size; i++) {
-		swap_flag = 0;
-		for(j = i; j < size-sequence-i; j = j+sequence) {
-			*comps = *comps+1;
-				if (arr[j] > arr[j+sequence]) {
-				temp = arr[j+sequence];
-				arr[j+sequence] = arr[j];    
-				arr[j] = temp;            
-				swap_flag = 1;
+	for(i = 0; i < sequence; i++) {
+		for(j = i+sequence; j < size; j = j+sequence) {
+			long key = arr[j];
+			k = j-sequence;
+			while(k >= i && arr[k] > key) {
+				*comps = *comps + 1;
+				arr[k+sequence] = arr[k];
+				k = k - sequence;
 			}
-		}
-		if(swap_flag == 0 && ((sequence == 1) )) {
-		break;
+			arr[k+sequence] = key;
 		}
 	}
+//	printArray(arr, size);
 
-} 
-
+}
 
 
 long *Array_Load_From_File(char *filename, int *size) {
-	//Processing file name to get size
-	*size = getSize(filename);
-	//	*size = 30;
 	FILE *fp = fopen(filename, "rb");
 	if (fp == NULL) {
-		printf("reading file failed");
 		*size = 0;
 		return NULL;
+	}
+	long dummy;
+	rewind(fp);
+	while(!feof(fp)) {
+		*size = *size + fread(&dummy, sizeof(long), 1, fp);
 	}
 	rewind(fp);
 	long * longArray = malloc(sizeof(long)*(*size));
@@ -94,7 +83,7 @@ long *Array_Load_From_File(char *filename, int *size) {
 int Array_Save_To_File(char *filename, long *array, int size) {
 	FILE *fp = fopen(filename, "wb");
 	if(fp == NULL) {
-	return EXIT_FAILURE;
+		return EXIT_FAILURE;
 	}
 	rewind(fp);
 	int writeSize = fwrite(array, sizeof(long), size, fp);
@@ -107,16 +96,12 @@ void Array_Shellsort(long *array, int size, double *n_comp) {
 	int pos = 0;
 	int curr_seq = 0;
 	long *sequence = Generate_2p3q_Seq(size, &sequence_size);
-//	printArray(array, size);
-//	printf("\n\n");
 	for(int i = sequence_size-1; i >=0;i--) {
 		pos = 0;
 		curr_seq = sequence[i];	
 		bubbleSort(array, size, curr_seq, n_comp);
 	}
 	free(sequence);
-//	printArray(array, size);
-//	printf("\n Number of comparisions = %f",*n_comp);
 }
 
 
