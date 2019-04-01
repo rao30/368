@@ -13,6 +13,12 @@ static long powa(long a, long b) {
 	}
 	return power;
 }
+
+static void printArray(long *array, int size) {
+	for (int i = 0; i < size; i++) {
+		printf("The array[%d] = %ld\n", i, array[i]);
+	}
+}
 long *Generate_2p3q_Seq(int length, int *seq_size) {
 	//Variables
 	long seq_num = 0;
@@ -22,6 +28,7 @@ long *Generate_2p3q_Seq(int length, int *seq_size) {
 	while (powa(2,p) < length) {
 		for (q = 0; q <= p; q++) {
 			seq_num = powa(2, p-q) * powa(3, q);	//Generating sequence number
+		//	printf("calculating sequence = %d", seq_num);
 			if(seq_num < length) {
 				size = size + 1;
 			}
@@ -30,6 +37,7 @@ long *Generate_2p3q_Seq(int length, int *seq_size) {
 	}
 	//Create array
 	*seq_size = size;
+//	printf("sequence size = %d", *seq_size); 
 	long * sequence = createLongArray(*seq_size);
 	if (sequence == NULL) {
 		*seq_size = 0;
@@ -67,6 +75,7 @@ long *Generate_2p3q_Seq(int length, int *seq_size) {
 			break;
 		}
 	}
+//	printArray(sequence, *seq_size);
 	return sequence;
 }
 

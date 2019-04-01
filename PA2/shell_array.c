@@ -70,12 +70,7 @@ long *Array_Load_From_File(char *filename, int *size) {
 		return NULL;
 	}
 
-	int readsize = fread(longArray, sizeof(long), *size, fp);
-	if (readsize == 0) {
-		free(longArray);
-		*size = 0;
-		return NULL;
-	}
+	fread(longArray, sizeof(long), *size, fp);
 	fclose(fp);
 	return longArray;
 }
@@ -85,6 +80,7 @@ int Array_Save_To_File(char *filename, long *array, int size) {
 	if(fp == NULL) {
 		return EXIT_FAILURE;
 	}
+	
 	rewind(fp);
 	int writeSize = fwrite(array, sizeof(long), size, fp);
 	fclose(fp);
