@@ -178,16 +178,16 @@ static Node* SortList(Node *list, double *comps)
 			head = current;
 		} else {
 
-			Node *p = head;
-			while(p != NULL) {
-				if(p->next == NULL || current->value < p->next->value)
+			Node *temp = head;
+			while(temp != NULL) {
+				if(temp->next == NULL || current->value < temp->next->value)
 				{
 					*comps = *comps + 1;
-					current->next = p->next;
-					p->next = current;
+					current->next = temp->next;
+					temp->next = current;
 					break;
 				}
-				p = p->next;
+				temp = temp->next;
 			} 
 		}
 	}
