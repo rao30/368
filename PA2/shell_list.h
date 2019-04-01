@@ -7,11 +7,7 @@ typedef struct _Node {
 } Node;
 
 
-typedef struct _List {
-	Node *node;
-	Node *tail;
-	struct _List *next;
-} List;
+
 
 
 Node *List_Load_From_File(char *filename);

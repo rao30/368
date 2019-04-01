@@ -3,6 +3,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include "sequence.h"
+
+typedef struct _List {
+	Node *node;
+	Node *tail;
+	struct _List *next;
+} List;
 static int listSize(Node *head) {
 	Node *n = head;
 	int counter = 0;
