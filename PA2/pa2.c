@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-static void printArray(long *array, int size) {
+/*static void printArray(long *array, int size) {
 	for (int i = 0; i < size; i++) {
 		printf("The array[%d] = %ld\n", i, array[i]);
 	}
@@ -19,7 +19,7 @@ static void printList(Node *head) {
 		}
 		n = n->next;
 	}
-}
+} */
 void freeList(Node *head) {
 	Node *temp;
 	while(head != NULL) {
@@ -47,7 +47,6 @@ int main(int argc, char* argv[]) {
 	Node *head = List_Load_From_File(argv[2]);
 	double compsA = 0;
 	Node *sortedList = List_Shellsort(head, &compsA);
-//	printList(sortedList);
 	printf("%le\n",compsA);
 	List_Save_To_File(argv[3], sortedList);
 	freeList(sortedList);

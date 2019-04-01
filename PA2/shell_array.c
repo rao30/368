@@ -5,36 +5,17 @@
 #include "sequence.h"
 
 
-static void printArray(long *array, int size) {
+/*static void printArray(long *array, int size) {
 	for (int i = 0; i < size; i++) {
 		printf("The array[%d] = %ld\n", i, array[i]);
 	}
-}
+} */
 static void bubbleSort(long arr[], int size,int sequence, double *comps) { 
 	//	*comps =10;
 	int i = 0;
 	int j = 0;
 	int k = 0;
-	int swap_flag = 0;
-	long temp = 0;
 
-/*	for(i = 0; i < sequence; i++) {
-		for(j = i; j < size; j = j+sequence) {
-			swap_flag = 0;
-			for(k = i; k < size-j-sequence; k = k+sequence) {
-				*comps = *comps + 1;
-				if(arr[k] > arr[k+sequence]) {
-					temp = arr[k];
-					arr[k] = arr[k+sequence];
-					arr[k+sequence] = temp;
-					swap_flag = 1;
-				}
-			}
-			if(swap_flag == 0) {
-				break;
-			}
-		}
-	} */
 	for(i = 0; i < sequence; i++) {
 		for(j = i+sequence; j < size; j = j+sequence) {
 			long key = arr[j];
@@ -47,8 +28,6 @@ static void bubbleSort(long arr[], int size,int sequence, double *comps) {
 			arr[k+sequence] = key;
 		}
 	}
-//	printArray(arr, size);
-
 }
 
 

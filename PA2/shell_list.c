@@ -24,41 +24,32 @@ static Node *create_node(long val) {
 	return new;
 }
 
-static void printList(Node *head) {
-	Node *n = head;
-	while(1) {
-		printf("Node Val = %ld\n", n->value);
-		if(n->next == NULL) {
-			break;
-		}
-		n = n->next;
-	}
-	printf("\n");
-}
+/*static void printList(Node *head) {
+  Node *n = head;
+  while(1) {
+  printf("Node Val = %ld\n", n->value);
+  if(n->next == NULL) {
+  break;
+  }
+  n = n->next;
+  }
+  printf("\n");
+  }
 
-static void printLists(List *list) {
-	List *l = list;
-	while(1) {
-		printList(l->node);
-		printf("\n");
-		if(l->next == NULL) {
-			break;
-		}
-		l = l->next;
-	}
-}
+  static void printLists(List *list) {
+  List *l = list;
+  while(1) {
+  printList(l->node);
+  printf("\n");
+  if(l->next == NULL) {
+  break;
+  }
+  l = l->next;
+  }
+  } */
 static Node *make_list(Node *head, long val, Node *tail) {
 	Node *t = create_node(val);
 	Node *n = (head);
-	/*	while(1) {
-		if(n -> next == NULL) {
-		t->next = NULL;
-		n -> next = t;
-		t->value = val;
-		break;
-		}
-		n = n -> next;
-		} */
 	if(tail == NULL) {
 		t->next = NULL;
 		n->next = t;
@@ -73,88 +64,6 @@ static Node *make_list(Node *head, long val, Node *tail) {
 
 }
 
-static Node *append_list(Node *head, Node *node, Node *tail) {
-	Node *t = node;
-	Node *n = (head);
-/*	while(1) {
-		if(n -> next == NULL) {
-			t->next = NULL;
-			n -> next = t;
-			break;
-		}
-		n = n -> next;
-	} */
-	if(tail == NULL) {
-	t->next = NULL;
-	n->next = t;
-	return t;
-	}
-	else {
-	t->next = NULL;
-	tail->next = t;
-	return t;
-	}
-}
-
-
-static Node *currNode(Node *head, int num) {
-	Node *n = head;
-	for(int i = 0; i< num; i++) {
-		n = n -> next;
-	}
-	return n;
-}
-
-static Node* swapNodes(Node* a, int p, Node* b, int q, Node* head) {
-	Node* preva = NULL;
-	Node* temp = NULL;
-	Node* prevb = currNode(head,q-1);
-	if(a == head) {
-		prevb->next = a;
-		temp = b->next;
-		b->next = a->next;
-		a->next = temp;
-		head = b;
-	}
-	else {
-		preva = currNode(head, p-1);
-		prevb->next = a;
-		preva->next = b;
-		temp = b->next;
-		b->next = a->next;    
-		a->next = temp;
-	}
-	return head;
-}
-
-static Node* insertNode(Node* a, Node* head, int position) {
-	if (position == 0) {
-		a->next = head;
-		return a;
-	}
-	else {
-		Node *prevb = currNode(head, position -1);
-		Node *b = prevb->next;
-		prevb->next = a;
-		a->next = b;
-		return head;
-	}	
-}
-
-static Node* removeNode(Node* a, Node*head, int position) {
-	if(position == 0) {
-		head = a->next;
-		a->next = NULL;
-		return head;
-	}
-	else {
-		Node *preva = currNode(head, position-1);
-		preva->next = a->next;
-		a->next = NULL;
-		return head;
-	}
-}
-
 static List* makeList(Node *node) {
 	List* list = malloc(sizeof(List));
 	list->next = NULL;
@@ -162,7 +71,14 @@ static List* makeList(Node *node) {
 	list->node = node;
 	return list;
 }
-
+void freeLists(List *list) {
+	List *temp;
+	while(list != NULL) {
+		temp = list;
+		list = list->next;
+		free(temp);
+	}
+}
 
 static List* generateListSequence(int sequence) {
 	List *list = makeList(NULL);
@@ -174,34 +90,6 @@ static List* generateListSequence(int sequence) {
 	return list;
 }
 
-/*static List* createList(Node* nodeHead, int sequence) {
-	Node *tempNode = nodeHead;
-	List* newList = generateListSequence(sequence);
-	List* head = newList;
-	while(1) {
-		if(tempNode == NULL) {
-			break;
-		}
-		if(newList == NULL) {
-			newList = head;
-		}
-		if(newList->node == NULL) {
-			newList->node = tempNode;
-			tempNode = tempNode->next;
-			newList->tail = newList->node;
-			newList->node->next = NULL;
-			newList = newList->next;
-
-		}
-		else {
-			Node *temper = tempNode;
-			tempNode = tempNode->next;
-			newList->tail = append_list(newList->node, temper, newList->tail);
-			newList = newList->next;
-		}
-	}
-	return head;
-} */
 
 static List* createList(List *oldList, int size, int sequence) {
 	List *oldListHead = oldList;
@@ -210,29 +98,29 @@ static List* createList(List *oldList, int size, int sequence) {
 	int i = 0;
 	while(1) {
 		if(i == size) {
-		break;
+			break;
 		}
 		if(oldList == NULL) {
-		oldList = oldListHead;
+			oldList = oldListHead;
 		}
 		if(newList == NULL) {
-		newList = head;
+			newList = head;
 		}
 		if(newList->tail == NULL) {
-		newList->node = oldList->node;
-		oldList->node = oldList->node->next;
-		newList->tail = newList->node;
-		newList->node->next = NULL;
-		oldList = oldList->next;
-		newList = newList->next;
+			newList->node = oldList->node;
+			oldList->node = oldList->node->next;
+			newList->tail = newList->node;
+			newList->node->next = NULL;
+			oldList = oldList->next;
+			newList = newList->next;
 		} 
 		else {
-		newList->tail->next = oldList->node;
-		oldList->node = oldList->node->next;
-		newList->tail = newList->tail->next;
-		newList->tail->next = NULL;
-		oldList = oldList->next;
-		newList = newList->next;
+			newList->tail->next = oldList->node;
+			oldList->node = oldList->node->next;
+			newList->tail = newList->tail->next;
+			newList->tail->next = NULL;
+			oldList = oldList->next;
+			newList = newList->next;
 		}
 		i++;
 	}
@@ -273,108 +161,45 @@ static Node* combineList(List* Lists, int size) {
 	return head;
 }
 
-static Node* SortList(Node *List, double *comps)
+static Node* SortList(Node *list, double *comps)
 {
-	// zero or one element in list
-	if(List == NULL || List->next == NULL)
-		return List;
-	// head is the first element of resulting sorted list
+
+	if(list == NULL || list->next == NULL)
+		return list;
+
 	Node *head = NULL;
-	while(List != NULL) {
-		Node * current = List;
-		List = List->next;
+	while(list != NULL) {
+		Node * current = list;
+		list = list->next;
 		if(head == NULL || current->value < head->value) {
-			// insert into the head of the sorted list
-			// or as the first element into an empty sorted list
+
 			*comps = *comps + 1;
 			current->next = head;
 			head = current;
 		} else {
-			// insert current element into proper position in non-empty sorted list
+
 			Node *p = head;
 			while(p != NULL) {
-				if(p->next == NULL || // last element of the sorted list
-						current->value < p->next->value) // middle of the list
+				if(p->next == NULL || current->value < p->next->value)
 				{
-					// insert into middle of the sorted list or as the last element
 					*comps = *comps + 1;
 					current->next = p->next;
 					p->next = current;
-					break; // done
+					break;
 				}
 				p = p->next;
-			}
+			} 
 		}
 	}
 	return head;
 }
 
-
-void sortedInsert(Node** head_ref, Node* new_node, double *comps) 
-{ 
-	Node* current; 
-	/* Special case for the head end */
-	if (*head_ref == NULL || (*head_ref)->value >= new_node->value) {
-		*comps = *comps + 1;
-		new_node->next = *head_ref; 
-		*head_ref = new_node; 
-	}
-	else
-	{ 
-		/* Locate the node before the point of insertion */
-		current = *head_ref; 
-		while (current->next!=NULL && current->next->value < new_node->value) 
-		{ 
-			*comps = *comps+1;
-			current = current->next; 
-		} 
-		new_node->next = current->next; 
-		current->next = new_node; 
-	} 
-}
-void insertionSort(Node **head_ref, double *comps) 
-{ 
-	// Initialize sorted linked list 
-	Node *sorted = NULL; 
-
-	// Traverse the given linked list and insert every 
-	// node to sorted 
-	Node *current = *head_ref;                        
-	while (current != NULL) 
-	{ 
-		// Store next for next iteration 
-		Node *next = current->next; 
-
-		// insert current in sorted linked list 
-		sortedInsert(&sorted, current, comps); 
-
-		// Update current 
-		current = next; 
-	} 
-
-	// Update head_ref to point to sorted linked list 
-	*head_ref = sorted; 
-} 
-
-/* function to insert a new_node in a list. Note that this 
-   function expects a pointer to head_ref as this can modify the 
-   head of the input linked list (similar to push())*/
-
-void freeLists(List *list) {
-	List *temp;
-	while(list != NULL) {
-		temp = list;
-		list = list->next;
-		free(temp);
-	}
-}
 Node *List_Load_From_File(char *filename) {
 	FILE *fp = fopen(filename, "rb");
 	if (fp == NULL) {
 		printf("reading file failed");
 		return NULL;
 	}
-
 	//Processing file name to get size
 	int readsize = 0;
 	long val = 0;
@@ -423,7 +248,6 @@ int List_Save_To_File(char *filename, Node *list) {
 
 Node *List_Shellsort(Node *list, double *n_comp) {
 	int sequence_size;
-	int curr_seq = 0;
 	int size = listSize(list);
 	long *sequence = Generate_2p3q_Seq(size, &sequence_size);
 	List *oldList = generateListSequence(1);
@@ -435,11 +259,11 @@ Node *List_Shellsort(Node *list, double *n_comp) {
 		tempList = newList;
 		for(int j = 0; j < sequence[i]; j++) {
 			tempList->node = SortList(tempList->node, n_comp);
-		//	insertionSort(&tempList->node, n_comp);
+			//	insertionSort(&tempList->node, n_comp);
 			tempList = tempList->next;
 		}
 		tempList = newList;
-//	printLists(tempList);
+		//	printLists(tempList);
 	}
 	list = combineList(newList, size);
 	freeLists(newList);

@@ -14,11 +14,11 @@ static long powa(long a, long b) {
 	return power;
 }
 
-static void printArray(long *array, int size) {
+/*static void printArray(long *array, int size) {
 	for (int i = 0; i < size; i++) {
 		printf("The array[%d] = %ld\n", i, array[i]);
 	}
-}
+} */
 long *Generate_2p3q_Seq(int length, int *seq_size) {
 	//Variables
 	long seq_num = 0;
@@ -75,7 +75,6 @@ long *Generate_2p3q_Seq(int length, int *seq_size) {
 			break;
 		}
 	}
-//	printArray(sequence, *seq_size);
 	return sequence;
 }
 

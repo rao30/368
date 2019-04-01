@@ -1,8 +1,8 @@
 #!/bin/bash
 gcc -std=c99 -Wall -Wshadow -Wvla -pedantic -g -lm *.c -o pa2
-valgrind pa2 -l 15.b 15shits.b
-diff 15sa.b 15shits.b
+valgrind pa2 -a 1000.b 15shits.b
+diff 1000sl.b 15shits.b
 
 
-pa2 -l 1000.b 15shits.b
+valgrind pa2 -l 1000.b 15shits.b
 diff 1000sl.b 15shits.b
