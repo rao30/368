@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/Purdue/368/PA5/sorting.c
+sorting.h
+E:/Purdue/368/PA5/sorting.h
+
+E:/Purdue/368/PA5/sorting.h
+

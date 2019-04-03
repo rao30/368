@@ -34,36 +34,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11a927d1-d5e1-438a-be9a-9e95be9d1f4d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../PA/PA01/o1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PA/PA01/o2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PA/PA01/o3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PA/PA01/out1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PA/PA01/out2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PA/PA01/out3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PA/PA01/t1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PA/PA01/t2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PA/PA01/t3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PA/PA01/t4" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15shits.b" beforeDir="false" afterPath="$PROJECT_DIR$/15shits.b" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pa2.c" beforeDir="false" afterPath="$PROJECT_DIR$/pa2.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shell_list.c" beforeDir="false" afterPath="$PROJECT_DIR$/shell_list.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PA4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PA4/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PA4/cmake-build-debug/CMakeFiles/PA4.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/../PA4/cmake-build-debug/CMakeFiles/PA4.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PA4/cmake-build-debug/PA4.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../PA4/cmake-build-debug/PA4.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw14/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hw14/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw14/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../hw14/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw14/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../hw14/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw14/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../hw14/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw14/cmake-build-debug/CMakeFiles/PA1.dir/huffman.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../hw14/cmake-build-debug/CMakeFiles/PA1.dir/huffman.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw14/cmake-build-debug/CMakeFiles/PA1.dir/huffman_main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../hw14/cmake-build-debug/CMakeFiles/PA1.dir/huffman_main.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw14/cmake-build-debug/CMakeFiles/PA1.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/../hw14/cmake-build-debug/CMakeFiles/PA1.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw14/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../hw14/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hw14/cmake-build-debug/PA1.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../hw14/cmake-build-debug/PA1.exe" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,65 +46,12 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pa2.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sequence.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shell_array.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="104" column="1" lean-forward="true" selection-start-line="104" selection-start-column="1" selection-end-line="104" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/shell_list.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="158" column="29" lean-forward="true" selection-start-line="158" selection-start-column="29" selection-end-line="158" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shell_list.h">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -141,6 +59,13 @@
       <find>pNext</find>
       <find>ivalue</find>
       <find>make_list</find>
+      <find>Parkingspotnumber</find>
+      <find>ft_int</find>
+      <find>extern</find>
+      <find>Total</find>
+      <find>bool</find>
+      <find>parkingspot</find>
+      <find>total</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -154,6 +79,7 @@
       </list>
     </option>
   </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="85" />
     <option name="y" value="25" />
@@ -183,6 +109,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="E:/ParkingSpotFinder/GUI/RichardGUI/GUI" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -225,7 +152,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9109000" />
+    <option name="totallyTimeSpent" value="20458000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -236,7 +163,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3997833" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -257,25 +184,35 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/shell_list.c</url>
-          <line>141</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/shell_list.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://E:/ParkingSpotFinder/GUI/Generated/Default/old_project/NoPage.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://E:/ParkingSpotFinder/GUI/Generated/Default/old_project/MainPage.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://E:/ParkingSpotFinder/GUI/Generated/Default/old_project/NoPage__Generated.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1377" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pa2.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sequence.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+        <state relative-caret-position="560">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
@@ -284,31 +221,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/shell_array.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="104" column="1" lean-forward="true" selection-start-line="104" selection-start-column="1" selection-end-line="104" selection-end-column="1" />
+        <state relative-caret-position="560">
+          <caret line="79" column="1" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shell_list.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pa2.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shell_list.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="158" column="29" lean-forward="true" selection-start-line="158" selection-start-column="29" selection-end-line="158" selection-end-column="29" />
+        <state relative-caret-position="17">
+          <caret line="182" column="33" lean-forward="true" selection-start-line="182" selection-start-column="33" selection-end-line="182" selection-end-column="33" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/ParkingSpotFinder/GUI/RichardGUI/Export/GUI/App__Generated.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3247" />
+      </provider>
+    </entry>
+    <entry file="file://E:/ParkingSpotFinder/GUI/RichardGUI/Export/GUI/Confirmation.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://E:/ParkingSpotFinder/GUI/RichardGUI/Export/GUI/MainPage.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://E:/ParkingSpotFinder/GUI/RichardGUI/Export/GUI/YesPage.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="36" column="14" lean-forward="true" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/ParkingSpotFinder/GUI/RichardGUI/Export/GUI/MainPage__Generated.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="20" column="82" lean-forward="true" selection-start-line="20" selection-start-column="82" selection-end-line="20" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/ParkingSpotFinder/GUI/RichardGUI/Export/GUI/YesPage.c">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://E:/ParkingSpotFinder/GUI/RichardGUI/Export/GUI/YesPage__Generated.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-697">
+          <caret line="96" column="54" selection-start-line="96" selection-start-column="54" selection-end-line="96" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/ParkingSpotFinder/GUI/RichardGUI/Export/GUI/Confirmation__Generated.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="124" column="31" selection-start-line="124" selection-start-column="20" selection-end-line="124" selection-end-column="31" />
         </state>
       </provider>
     </entry>

@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "sequence.h"
+#include "sorting.h"
 
 
 /*static void printArray(long *array, int size) {
