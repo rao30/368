@@ -1,0 +1,18 @@
+#!/bin/bash
+gcc -std=c99 -Wall -Wshadow -Wvla -pedantic -g -lm *.c -o pa5
+pa5 -q 1M1.b 15shits.b
+pa5 -q 1M2.b 15shits.b
+pa5 -q 1M3.b 15shits.b
+pa5 -q 1M4.b 15shits.b
+pa5 -q 1M5.b 15shits.b
+
+
+pa5 -m 1M1.b 15shits.b
+pa5 -m 1M2.b 15shits.b
+pa5 -m 1M3.b 15shits.b
+pa5 -m 1M4.b 15shits.b
+pa5 -m 1M5.b 15shits.b
+
+
+valgrind pa5 -m 1000.b 15shits.b
+#diff 1000sa.b 15shits.b

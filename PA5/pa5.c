@@ -4,38 +4,46 @@
 #include <string.h>
 #include <time.h>
 long *Array_Load_From_File(char *filename, int *size) {
-    FILE *fp = fopen(filename, "rb");
-    if (fp == NULL) {
-        *size = 0;
-        return NULL;
-    }
-    long dummy;
-    rewind(fp);
-    while(!feof(fp)) {
-        *size = *size + fread(&dummy, sizeof(long), 1, fp);
-    }
-    rewind(fp);
-    long * longArray = malloc(sizeof(long)*(*size));
-    if (longArray == NULL) {
-        *size = 0;
-        return NULL;
-    }
+	FILE *fp = fopen(filename, "rb");
+	if (fp == NULL) {
+		*size = 0;
+		return NULL;
+	}
+	long dummy;
+	rewind(fp);
+	while(!feof(fp)) {
+		*size = *size + fread(&dummy, sizeof(long), 1, fp);
 
-    fread(longArray, sizeof(long), *size, fp);
-    fclose(fp);
-    return longArray;
+	}
+	rewind(fp);
+	printf("size of array = %d", *size);
+	long * longArray = malloc(sizeof(long)*(*size));
+	if (longArray == NULL) {
+		*size = 0;
+		return NULL;
+	}
+
+	fread(longArray, sizeof(long), *size, fp);
+	fclose(fp);
+	return longArray;
 }
 
 int Array_Save_To_File(char *filename, long *array, int size) {
-    FILE *fp = fopen(filename, "wb");
-    if(fp == NULL) {
-        return EXIT_FAILURE;
-    }
+	FILE *fp = fopen(filename, "wb");
+	int writeSize = 0;
+	if(fp == NULL) {
+		return EXIT_FAILURE;
+	}
 
-    rewind(fp);
-    int writeSize = fwrite(array, sizeof(long), size, fp);
-    fclose(fp);
-    return writeSize;
+	rewind(fp);
+	for(int i = 0; i < size; i++) {
+		writeSize = fwrite(&array[i], sizeof(long), 1, fp);
+		if(writeSize != 1) {
+			break;
+		}
+	}
+	fclose(fp);
+	return writeSize;
 }
 
 static void printArray(long *array, int size) {
@@ -45,39 +53,45 @@ static void printArray(long *array, int size) {
 }
 
 int main(int argc, char* argv[]) {
-    int size = 0;
-    if (argc < 4) {
-        return EXIT_FAILURE;
-    }
-    if(strcmp(argv[1],"-q") == 0) {
-        long *inputArray;
-        inputArray = Array_Load_From_File(argv[2], &size);
-        if (inputArray == NULL) {
-            printf("failed to load file");
-            return EXIT_FAILURE;
-        }
-        clock_t t;
-        t = clock();
-        Quick_Sort(inputArray, size);
-        t = clock() - t;
-        double time_taken = 1000*((double)t)/CLOCKS_PER_SEC; // in seconds
-      //  printArray(inputArray, size);
-        printf("quicksort took %f seconds to execute \n", time_taken);
-        Array_Save_To_File(argv[3], inputArray, size);
-        free(inputArray);
-        return EXIT_SUCCESS;
-    }
-    else if(strcmp(argv[1],"-m") == 0) {
-        long *inputArray;
-        inputArray = Array_Load_From_File(argv[2], &size);
-        if (inputArray == NULL) {
-            printf("failed to load file");
-            return EXIT_FAILURE;
-        }
-        Merge_Sort(inputArray, size);
-        Array_Save_To_File(argv[3], inputArray, size);
-        free(inputArray);
-        return EXIT_SUCCESS;
-    }
-    return EXIT_SUCCESS;
+	int size = 0;
+	if (argc < 4) {
+		return EXIT_FAILURE;
+	}
+	if(strcmp(argv[1],"-q") == 0) {
+		long *inputArray;
+		inputArray = Array_Load_From_File(argv[2], &size);
+		if (inputArray == NULL) {
+			printf("failed to load file");
+			return EXIT_FAILURE;
+		}
+		clock_t t;
+		t = clock();
+		Quick_Sort(inputArray, size);
+		t = clock() - t;
+		double time_taken = 1000*((double)t)/CLOCKS_PER_SEC; // in seconds
+		printf("quicksort took %f ms to execute \n", time_taken);
+		Array_Save_To_File(argv[3], inputArray, size);
+		free(inputArray);
+		return EXIT_SUCCESS;
+	}
+	else if(strcmp(argv[1],"-m") == 0) {
+		long *inputArray;
+		inputArray = Array_Load_From_File(argv[2], &size);
+		if (inputArray == NULL) {
+			printf("failed to load file");
+			return EXIT_FAILURE;
+		}
+		clock_t t;
+		t = clock();
+		Merge_Sort(inputArray, size);
+		t = clock() - t;
+		double time_taken = 1000*((double)t)/CLOCKS_PER_SEC;
+		printf("mergesort took %f ms to execute \n", time_taken);
+		Array_Save_To_File(argv[3], inputArray, size);
+		free(inputArray);
+		return EXIT_SUCCESS;
+	}
+	return EXIT_SUCCESS;
 }
+
+
