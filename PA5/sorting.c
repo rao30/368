@@ -1,32 +1,36 @@
 #include "sorting.h"
 #include <stdlib.h>
 #include <stdio.h>
-void swap(long* a, long* b)
+#include <string.h>
+static void swap(long* a, long* b)
 {
-	long t = *a;
+	long temp = *a;
 	*a = *b;
-	*b = t;
+	*b = temp;
 }
 
 
-int partition (long arr[], int low, int high)
+static long partition (long arr[], int low, int high)
 {
 	long pivot = arr[high];
 	//	long pivot = threeMedian(&arr[low], &arr[(low+high)/2], &arr[high]);
 	int i = (low - 1);
-
-	for (int j = low; j <= high- 1; j++)
+	int j = low;
+	while(j <= high- 1)
 	{
 		if (arr[j] <= pivot)
 		{
 			i++;
 			swap(&arr[i], &arr[j]);
 		}
+		j++;
 	}
 	swap(&arr[i + 1], &arr[high]);
 	return (i + 1);
 }
-int threeMedian_partition(long arr[], long low, long high) {
+
+
+static long threeMedian_partition(long arr[], long low, long high) {
 	long mid = (low+high)/2;
 	long l = arr[low];
 	long m = arr[mid];
@@ -40,8 +44,7 @@ int threeMedian_partition(long arr[], long low, long high) {
 	return partition(arr, low, high);
 }
 
-
-void quickSort(long arr[], long low, long high)
+static void quickSort(long arr[], long low, long high)
 {
 	if (low < high)
 	{
@@ -56,22 +59,27 @@ void Quick_Sort(long *Array, int Size) {
 
 }
 
-long min(long x, long y) { return (x<y)? x :y; } 
-void merge(long arr[], long left, long mid, long right) 
+static long min(long x, long y) { 
+	if( x < y) {
+	return x;
+	}
+	else {
+	return y;
+	}
+} 
+
+static void merge(long arr[], long left, long mid, long right) 
 { 
-	long i;
-	long j;
-	long k; 
+	long i = 0;
+	long j = 0;
+	long k = 0; 
 	long l = mid - left + 1; 
 	long r =  right - mid; 
 	long *LeftArr = malloc(l*sizeof(long));
 	long *RightArr = malloc(r*sizeof(long));
-	for (i = 0; i < l; i++) {
-		LeftArr[i] = arr[left + i]; 
-		}
-	for (j = 0; j < r; j++) { 
-		RightArr[j] = arr[mid + 1+ j];
-		}
+	//Dividing array into two parts
+	memcpy(LeftArr, &arr[left], l*sizeof(long));
+	memcpy(RightArr, &arr[mid + 1], r*sizeof(long));
 	i = 0; 
 	j = 0; 
 	k = left; 
@@ -92,14 +100,14 @@ void merge(long arr[], long left, long mid, long right)
 	while (i < l) 
 	{ 
 		arr[k] = LeftArr[i]; 
-		i++; 
-		k++; 
+		i++;
+		k++;
 	} 
 	while (j < r) 
 	{ 
 		arr[k] = RightArr[j]; 
-		j++; 
-		k++; 
+		k++;
+		j++;
 	} 
 	free(LeftArr);
 	free(RightArr);
@@ -108,15 +116,16 @@ void merge(long arr[], long left, long mid, long right)
 
 void Merge_Sort(long *Array, int Size){
 	long n = Size;
-	long curr_size; 
-	long left_start;
-	for (curr_size=1; curr_size<=n-1; curr_size = 2*curr_size) 
-	{ 
-		for (left_start=0; left_start<n-1; left_start += 2*curr_size) 
-		{ 
-			long mid = min(left_start + curr_size - 1, n - 1);
-			long right_end = min(left_start + 2*curr_size - 1, n-1); 
-			merge(Array, left_start, mid, right_end); 
-		} 
-	} 
+	long cs = 1; 
+	long ls;
+	while(cs <= n-1) {
+		ls = 0;
+		while(ls < n-1) {
+			long mid = min(ls + cs - 1, n - 1);
+			long r = min((2 * cs) + ls - 1, n-1); 
+			merge(Array, ls, mid, r); 
+			ls = ls + 2*cs;
+		}
+		cs = 2*cs;
+	}
 }

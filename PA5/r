@@ -1,5 +1,5 @@
 #!/bin/bash
-gcc -std=c99 -Wall -Wshadow -Wvla -pedantic -g -lm *.c -o pa5
+gcc -std=c99 -Wall -Wshadow -Wvla -pedantic -O3 -lm *.c -o pa5
 pa5 -q 1M1.b 15shits.b
 pa5 -q 1M2.b 15shits.b
 pa5 -q 1M3.b 15shits.b
