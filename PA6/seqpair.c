@@ -98,7 +98,7 @@ void push(Stack *s, Node *v) {
     s->arr[0] = v;
 }
 
-Node *_pop(Stack *s) {
+Node *pop(Stack *s) {
     if (s->len < 1) {
         return NULL;
     }
@@ -115,15 +115,41 @@ int empty(Stack *s) {
     return (s->len == 0);
 }
 
-void toposort(Node *v, Stack *s, int h) {
+void toposort(Node *v, Stack *s, int axis) {
     v->color = BLACK;
+    int i = 0;
+    if(axis) {
+        while(1) {
+            if(i >= v->hadj_cnt) {
+                break;
+            }
+            Node *u = v->h_adj[i];
+            if (u->color == WHITE) {
+            toposort(u, s, axis);
+        }
+            i++;
 
-    for (int i = 0; i < ((h) ? v->hadj_cnt : v->vadj_cnt); i++) {
-        Node *u = (h) ? v->h_adj[i] : v->v_adj[i];
-        if (u->color == WHITE) {
-            toposort(u, s, h);
         }
     }
+    else {
+        while(1) {
+            if(i >= v->vadj_cnt) {
+                break;
+            }
+            Node *u = v->v_adj[i];
+            if (u->color == WHITE) {
+                toposort(u, s, axis);
+            }
+            i++;
+
+        }
+    }
+//    for (int i = 0; i < ((h) ? v->hadj_cnt : v->vadj_cnt); i++) {
+//        Node *u = (h) ? v->h_adj[i] : v->v_adj[i];
+//        if (u->color == WHITE) {
+//            toposort(u, s, h);
+//        }
+//    }
     push(s, v);
 }
 
@@ -149,7 +175,7 @@ void find_coords(Graph *g) {
     }
 
     while (!empty(sh)) {
-        Node *u = _pop(sh);
+        Node *u = pop(sh);
         for (int i = 0; i < u->hadj_cnt; i++) {
             Node *x = u->h_adj[i];
             if (x->dx <= u->dx + u->width) {
@@ -158,7 +184,7 @@ void find_coords(Graph *g) {
         }
     }
     while (!empty(sv)) {
-        Node *u = _pop(sv);
+        Node *u = pop(sv);
         for (int i = 0; i < u->vadj_cnt; i++) {
             Node *x = u->v_adj[i];
             if (x->dy <= u->dy + u->height) {
