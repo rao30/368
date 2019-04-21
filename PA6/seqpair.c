@@ -98,7 +98,7 @@ void push(Stack *s, Node *v) {
     s->arr[0] = v;
 }
 
-Node *pop(Stack *s) {
+Node *_pop(Stack *s) {
     if (s->len < 1) {
         return NULL;
     }
@@ -149,7 +149,7 @@ void find_coords(Graph *g) {
     }
 
     while (!empty(sh)) {
-        Node *u = pop(sh);
+        Node *u = _pop(sh);
         for (int i = 0; i < u->hadj_cnt; i++) {
             Node *x = u->h_adj[i];
             if (x->dx <= u->dx + u->width) {
@@ -158,7 +158,7 @@ void find_coords(Graph *g) {
         }
     }
     while (!empty(sv)) {
-        Node *u = pop(sv);
+        Node *u = _pop(sv);
         for (int i = 0; i < u->vadj_cnt; i++) {
             Node *x = u->v_adj[i];
             if (x->dy <= u->dy + u->height) {
