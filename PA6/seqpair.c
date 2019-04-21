@@ -117,26 +117,11 @@ int empty(Stack *s) {
 
 void toposort(Node *v, Stack *s, int h) {
     v->color = BLACK;
-    int i = 0;
-    while(1) {
-        if( i < v->hadj_cnt) {
-            h = v->hadj_cnt;
-            Node *u = v->h_adj[i];
-            i++;
-            if (u->color == WHITE) {
-                toposort(u, s, h);
-            }
-        }
-        else if (i < v->vadj_cnt) {
-            h = v->vadj_cnt;
-            Node *u = v->v_adj[i];
-            i++;
-            if (u->color == WHITE) {
-                toposort(u, s, h);
-            }
-        }
-        else {
-            break;
+
+    for (int i = 0; i < ((h) ? v->hadj_cnt : v->vadj_cnt); i++) {
+        Node *u = (h) ? v->h_adj[i] : v->v_adj[i];
+        if (u->color == WHITE) {
+            toposort(u, s, h);
         }
     }
     push(s, v);
@@ -151,7 +136,7 @@ void find_coords(Graph *g) {
             toposort(v[i], sh, 1);
         }
         if (i != 0) {
-            v[i]->dx = v[i]->dy = -1;
+            v[i]->dx = v[i]->dy = -INT_MAX;
         }
     }
     for (int i = 0; i < g->v_len; i++) {
