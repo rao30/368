@@ -1,0 +1,102 @@
+//
+// Created by Richie on 2/27/2019.
+//
+
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "seqpair.h"
+
+
+int main(int argc, char* argv[]) {
+    if (argc != 3) {
+        return EXIT_FAILURE;
+    }
+    FILE *fp = fopen(argv[1], "r");
+    if(fp == NULL) {
+        return EXIT_FAILURE;
+    }
+    FILE *fp1 = fopen(argv[2], "w");
+    if (fp1 == NULL) {
+        return EXIT_FAILURE;
+    }
+    rewind(fp);
+    //Variables
+    int rNumber;
+    fscanf(fp, "%de\n", &rNumber);
+    Node nums[rNumber];
+    int sequence1[rNumber];
+    int sequence2[rNumber];
+    char str[200];
+    int match;
+    double width;
+    double height;
+    int rectNum;
+    int counter = 0;
+    int seqNum;
+    while(1) {
+        fgets(str, 200, fp);
+        if (feof(fp)) {
+            break;
+        }
+        match = sscanf(str, "%d(%le,%le)\n", &rectNum, &width, &height);
+        if (match == 3) {
+            nums[counter].h = height;
+            nums[counter].w = width;
+            nums[counter].rectNum = rectNum;
+            counter++;
+
+        }
+        if (counter > rNumber - 1) {
+            for (int i = 0; i < rNumber - 1; i++) {
+                fscanf(fp, "%d ", &seqNum);
+                sequence1[i] = seqNum;
+            }
+            fscanf(fp, "%d\n", &seqNum);
+            sequence1[rNumber - 1] = seqNum;
+            for (int i = 0; i < rNumber - 1; i++) {
+                fscanf(fp, "%d ", &seqNum);
+                sequence2[i] = seqNum;
+            }
+            fscanf(fp, "%d\n", &seqNum);
+            sequence2[rNumber - 1] = seqNum;
+        }
+    }
+
+    //GetHorizontalTree
+    for(int x = 0; x < rNumber; x++) {
+        int s1 = sequence1[x];
+        for(int y = 0; y < rNumber; y++) {
+            int s2 = sequence2[y];
+
+        }
+    }
+    // printf("%le %le %le\n",rd, r, c);
+    fclose(fp);
+    fclose(fp1);
+}
+
+void addLeftNode(Node **head, Node *node){
+    while(1) {
+        if(*head->l)
+    }
+}
+
+
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "seqpair.h"
+    Node *create_node(int label, double h, double w) {
+    Node *new = malloc(sizeof(Node));
+    new -> rectNum = label;
+    new ->h = h;
+    new ->w = w;
+    new->hnext = NULL;
+    new->vnext = NULL;
+    new->hleft = NULL;
+    new->hright = NULL;
+    new->vup = NULL;
+    new->vdown = NULL;
+    return new;
+}

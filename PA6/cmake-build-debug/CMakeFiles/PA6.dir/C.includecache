@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/Purdue/368/PA6/seqpair.c
+stdio.h
+-
+stdlib.h
+-
+limits.h
+-
+seqpair.h
+E:/Purdue/368/PA6/seqpair.h
+
+E:/Purdue/368/PA6/seqpair.h
+
