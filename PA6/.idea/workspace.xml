@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/seqpair.h" line="23" />
+    <bookmark url="file://$PROJECT_DIR$/seqpair.h" line="24" />
   </component>
   <component name="BuildServerSettings">
     <option name="LOGIN" value="" />
@@ -38,10 +38,11 @@
   <component name="ChangeListManager">
     <list default="true" id="971bd673-c0d3-4727-9ff7-2407e8baeaca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/1shit.pck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA6.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA6.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA6.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA6.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA6.dir/seqpair.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA6.dir/pa6.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA6.dir/pa6.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA6.dir/seqpair.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA6.dir/seqpair.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/PA6.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/PA6.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pa6.c" beforeDir="false" afterPath="$PROJECT_DIR$/pa6.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seqpair.c" beforeDir="false" afterPath="$PROJECT_DIR$/seqpair.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seqpair.h" beforeDir="false" afterPath="$PROJECT_DIR$/seqpair.h" afterDir="false" />
     </list>
@@ -61,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/seqpair.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="32" column="3" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+            <state relative-caret-position="401">
+              <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -70,8 +71,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pa6.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="51">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -82,8 +83,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/seqpair.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+            <state relative-caret-position="1659">
+              <caret line="175" column="31" lean-forward="true" selection-start-line="175" selection-start-column="31" selection-end-line="175" selection-end-column="31" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -144,8 +145,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>_empty</find>
-      <find>_topo_sort</find>
       <find>_init_stack</find>
       <find>_make_connections</find>
       <find>makeConnections</find>
@@ -174,6 +173,8 @@
       <find>g</find>
       <find>sizeof</find>
       <find>connect</find>
+      <find>table1</find>
+      <find>table2</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -185,8 +186,8 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/../PA03/pa3.c" />
         <option value="$PROJECT_DIR$/temp" />
-        <option value="$PROJECT_DIR$/seqpair.h" />
         <option value="$PROJECT_DIR$/pa6.c" />
+        <option value="$PROJECT_DIR$/seqpair.h" />
         <option value="$PROJECT_DIR$/seqpair.c" />
       </list>
     </option>
@@ -268,12 +269,12 @@
       <option name="presentableId" value="Default" />
       <updated>1555548193278</updated>
       <workItem from="1555548194635" duration="6597000" />
-      <workItem from="1555733867570" duration="21989000" />
+      <workItem from="1555733867570" duration="23267000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28586000" />
+    <option name="totallyTimeSpent" value="29864000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -336,27 +337,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/pa6.c</url>
-          <line>3</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/seqpair.c</url>
-          <line>240</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/seqpair.c</url>
-          <line>99</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/library.h" />
@@ -447,15 +427,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/seqpair.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="32" column="3" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+        <state relative-caret-position="401">
+          <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pa6.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -471,8 +451,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/seqpair.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        <state relative-caret-position="1659">
+          <caret line="175" column="31" lean-forward="true" selection-start-line="175" selection-start-column="31" selection-end-line="175" selection-end-column="31" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

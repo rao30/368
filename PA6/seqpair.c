@@ -14,19 +14,19 @@ void join(Graph *g, int *sequence1, int *sequence2) {
     Node **head = g->v;
     int rNumber = g->v_len;
 
-    int *table1 = indexing(sequence1, rNumber-1);
-    int *table2 = indexing(sequence2, rNumber-1);
+    int *listH = indexing(sequence1, rNumber-1);
+    int *listV = indexing(sequence2, rNumber-1);
     for (int i = 1; i < rNumber; i++) {
-        int idx1 = table1[head[i]->label];
-        int idx2 = table2[head[i]->label];
+        int idx1 = listH[head[i]->label];
+        int idx2 = listV[head[i]->label];
 
         for (int j = idx2+1, k = 0; j < rNumber - 1; j++, k++) {
-            if (table1[sequence2[j]] > idx1) {
+            if (listH[sequence2[j]] > idx1) {
                 int cnt = ++(head[i]->hc);
                 head[i]->h_adj = realloc(head[i]->h_adj, cnt*sizeof(Node));
                 head[i]->h_adj[cnt-1] = head[sequence2[j]];
             }
-            if (table1[sequence2[j]] < idx1) {
+            if (listH[sequence2[j]] < idx1) {
                 //above
                 int cnt = ++(head[i]->vc);
                 head[i]->v_adj = realloc(head[i]->v_adj, cnt*sizeof(Node));
@@ -34,8 +34,8 @@ void join(Graph *g, int *sequence1, int *sequence2) {
             }
         }
     }
-    free(table1);
-    free(table2);
+    free(listH);
+    free(listV);
 }
 
 void push(Stack *s, Node *head) {
@@ -108,46 +108,6 @@ Graph *load(char *fname) {
 }
 
 
-//
-//void toposort(Node *head, Stack *s, int axis) {
-//    head->color = B;
-//    int i = 0;
-//    if(axis) {
-//        while(1) {
-//            if(i >= head->hc) {
-//                break;
-//            }
-//            Node *haj = head->h_adj[i];
-//            if (haj->color == W) {
-//            toposort(haj, s, axis);
-//        }
-//            i++;
-//
-//        }
-//    }
-//    else {
-//        while(1) {
-//            if(i >= head->vc) {
-//                break;
-//            }
-//            Node *vaj = head->v_adj[i];
-//            if (vaj->color == W) {
-//                toposort(vaj, s, axis);
-//            }
-//            i++;
-//
-//        }
-//    }
-////    for (int i = 0; i < ((h) ? head->hc : head->vc); i++) {
-////        Node *u = (h) ? head->h_adj[i] : head->v_adj[i];
-////        if (popped->color == W) {
-////            toposort(u, s, h);
-////        }
-////    }
-//
-//    push(s, head);
-//}
-
 void tsortx(Node *head, Stack *s) {
     head->color = B;
     int i = 0;
@@ -188,7 +148,7 @@ void find_coords(Graph *g) {
     Node **head = g->v;
     Stack *v = calloc(1,sizeof(Stack));
     Stack *h = calloc(1,sizeof(Stack));
-
+    //Getting x coords
     for (int i = 0; i < g->v_len; i++) {
         if (head[i]->color == W) {
             tsortx(head[i], h);
@@ -197,6 +157,17 @@ void find_coords(Graph *g) {
             head[i]->dx = head[i]->dy = -1;
         }
     }
+    while (h->len != 0) {
+        Node *popped = pop(h);
+        for (int i = 0; i < popped->hc; i++) {
+            double cwidth =popped->dx + popped->width;
+            Node *x = popped->h_adj[i];
+            if (x->dx <= cwidth) {
+                x->dx = cwidth;
+            }
+        }
+    }
+    //Resetting and getting y coords
     for (int i = 0; i < g->v_len; i++) {
         head[i]->color = W;
     }
@@ -215,16 +186,7 @@ void find_coords(Graph *g) {
             }
         }
     }
-    while (h->len != 0) {
-        Node *popped = pop(h);
-        for (int i = 0; i < popped->hc; i++) {
-            double cwidth =popped->dx + popped->width;
-            Node *x = popped->h_adj[i];
-            if (x->dx <= cwidth) {
-                x->dx = cwidth;
-            }
-        }
-    }
+
     free(v);
     free(h);
 }
@@ -232,7 +194,7 @@ void find_coords(Graph *g) {
 int save(Graph *graph, char *filename) {
     FILE *fp = fopen(filename, "w");
     if (!fp) {
-        EXIT_FAILURE;
+        return EXIT_FAILURE;
     }
 
     Node **rectList = graph->v;

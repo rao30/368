@@ -11,7 +11,8 @@ typedef struct _Node {
     double height;
     int dx;
     int dy;
-    int hc, vc;
+    int hc;
+    int vc;
     struct _Node **h_adj;
     struct _Node **v_adj;
 
@@ -28,9 +29,8 @@ typedef struct _Queue {
     int len;
 } Stack;
 
-Graph *load(char *fname);
+Graph *load(char *fName);
 void find_coords(Graph *g);
-int save(Graph *g, char *fname);
+int save(Graph *g, char *fName);
 void freeAll(Graph *g);
-
 #endif
