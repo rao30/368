@@ -37,12 +37,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="971bd673-c0d3-4727-9ff7-2407e8baeaca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/1shit.pck" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA6.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA6.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA6.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA6.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA6.dir/pa6.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA6.dir/pa6.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA6.dir/seqpair.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PA6.dir/seqpair.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/PA6.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/PA6.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pa6.c" beforeDir="false" afterPath="$PROJECT_DIR$/pa6.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seqpair.c" beforeDir="false" afterPath="$PROJECT_DIR$/seqpair.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seqpair.h" beforeDir="false" afterPath="$PROJECT_DIR$/seqpair.h" afterDir="false" />
     </list>
@@ -59,35 +54,29 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pa6.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="19" lean-forward="true" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/seqpair.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+            <state relative-caret-position="374">
+              <caret line="22" column="8" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pa6.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/seqpair.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1659">
-              <caret line="175" column="31" lean-forward="true" selection-start-line="175" selection-start-column="31" selection-end-line="175" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="1" column="19" lean-forward="true" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -145,7 +134,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>_init_stack</find>
       <find>_make_connections</find>
       <find>makeConnections</find>
       <find>save_to_file</find>
@@ -175,6 +163,7 @@
       <find>connect</find>
       <find>table1</find>
       <find>table2</find>
+      <find>v_len</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -186,9 +175,9 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/../PA03/pa3.c" />
         <option value="$PROJECT_DIR$/temp" />
-        <option value="$PROJECT_DIR$/pa6.c" />
         <option value="$PROJECT_DIR$/seqpair.h" />
         <option value="$PROJECT_DIR$/seqpair.c" />
+        <option value="$PROJECT_DIR$/pa6.c" />
       </list>
     </option>
   </component>
@@ -269,12 +258,12 @@
       <option name="presentableId" value="Default" />
       <updated>1555548193278</updated>
       <workItem from="1555548194635" duration="6597000" />
-      <workItem from="1555733867570" duration="23267000" />
+      <workItem from="1555733867570" duration="23701000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29864000" />
+    <option name="totallyTimeSpent" value="30298000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -404,9 +393,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../PA03/pa3.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../PA03/tree.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -422,26 +408,6 @@
     <entry file="file://$PROJECT_DIR$/r100.pck">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/r8.pck">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seqpair.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pa6.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/1shit.pck">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -449,13 +415,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/r8.pck">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../PA03/pa3.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seqpair.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="8" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/seqpair.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1659">
-          <caret line="175" column="31" lean-forward="true" selection-start-line="175" selection-start-column="31" selection-end-line="175" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="1" column="19" lean-forward="true" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pa6.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="19" lean-forward="true" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
         </state>
       </provider>
     </entry>

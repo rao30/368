@@ -20,7 +20,7 @@ typedef struct _Node {
 
 typedef struct _Graph {
     Node **v;
-    int v_len;
+    int len;
 } Graph;
 
 
@@ -29,7 +29,14 @@ typedef struct _Queue {
     int len;
 } Stack;
 
+
+void join(Graph *g, int *sequence1, int *sequence2);
+int *indexing(int *x, int rNumber);
+void push(Stack *s, Node *head);
+Node *pop(Stack *s);
 Graph *load(char *fName);
+void tsorty(Node *head, Stack *s);
+void tsortx(Node *head, Stack *s);
 void find_coords(Graph *g);
 int save(Graph *g, char *fName);
 void freeAll(Graph *g);

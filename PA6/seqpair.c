@@ -2,17 +2,9 @@
 #include <stdlib.h>
 #include "seqpair.h"
 
-int *indexing(int *x, int rNumber) {
-    int *list = malloc(sizeof(int) * (rNumber+1));
-    for (int i = 0; i < rNumber; i++) {
-        list[x[i]] = i;
-    }
-    return list;
-}
-
 void join(Graph *g, int *sequence1, int *sequence2) {
     Node **head = g->v;
-    int rNumber = g->v_len;
+    int rNumber = g->len;
 
     int *listH = indexing(sequence1, rNumber-1);
     int *listV = indexing(sequence2, rNumber-1);
@@ -36,6 +28,14 @@ void join(Graph *g, int *sequence1, int *sequence2) {
     }
     free(listH);
     free(listV);
+}
+
+int *indexing(int *x, int rNumber) {
+    int *list = malloc(sizeof(int) * (rNumber+1));
+    for (int i = 0; i < rNumber; i++) {
+        list[x[i]] = i;
+    }
+    return list;
 }
 
 void push(Stack *s, Node *head) {
@@ -100,7 +100,7 @@ Graph *load(char *fname) {
     }
     Graph *g = calloc(1, sizeof(Graph));
     g->v = head;
-    g->v_len = rNumber;
+    g->len = rNumber;
     join(g, sequence1, sequence2);
 
     fclose(fp);
@@ -149,7 +149,7 @@ void find_coords(Graph *g) {
     Stack *v = calloc(1,sizeof(Stack));
     Stack *h = calloc(1,sizeof(Stack));
     //Getting x coords
-    for (int i = 0; i < g->v_len; i++) {
+    for (int i = 0; i < g->len; i++) {
         if (head[i]->color == W) {
             tsortx(head[i], h);
         }
@@ -168,10 +168,10 @@ void find_coords(Graph *g) {
         }
     }
     //Resetting and getting y coords
-    for (int i = 0; i < g->v_len; i++) {
+    for (int i = 0; i < g->len; i++) {
         head[i]->color = W;
     }
-    for (int i = 0; i < g->v_len; i++) {
+    for (int i = 0; i < g->len; i++) {
         if (head[i]->color == W) {
             tsorty(head[i], v);
         }
@@ -198,7 +198,7 @@ int save(Graph *graph, char *filename) {
     }
 
     Node **rectList = graph->v;
-    int rNumber = graph->v_len;
+    int rNumber = graph->len;
     for (int i = 1; i < rNumber; i++) {
         fprintf(fp, "%d(%.6le,%.6le)\n", rectList[i]->label, (double)rectList[i]->dx, (double)rectList[i]->dy);
     }
@@ -207,7 +207,7 @@ int save(Graph *graph, char *filename) {
 }
 
 void freeAll(Graph *g) {
-    for (int i = 0; i < g->v_len; i++) {
+    for (int i = 0; i < g->len; i++) {
         free(g->v[i]->v_adj);
         free(g->v[i]->h_adj);
         free(g->v[i]);

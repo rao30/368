@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-E:/Purdue/368/PA6/seqpair.c
+E:/Purdue/368/PA6/pa6.c
 stdio.h
 -
 stdlib.h
