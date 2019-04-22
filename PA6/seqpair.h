@@ -1,9 +1,8 @@
 #ifndef SEQPAIR_H
 #define SEQPAIR_H
 
-#define WHITE 0
-#define GRAY 1
-#define BLACK 2
+#define W 0
+#define B 1
 
 typedef struct _Node {
     int label;
@@ -12,9 +11,10 @@ typedef struct _Node {
     double height;
     int dx;
     int dy;
+    int hc, vc;
     struct _Node **h_adj;
     struct _Node **v_adj;
-    int hadj_cnt, vadj_cnt;
+
 } Node;
 
 typedef struct _Graph {
@@ -30,7 +30,7 @@ typedef struct _Queue {
 
 Graph *load(char *fname);
 void find_coords(Graph *g);
-void save(Graph *g, char *fname);
-void free_graph(Graph *g);
+int save(Graph *g, char *fname);
+void freeAll(Graph *g);
 
 #endif
